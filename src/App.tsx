@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, ArrowRight, ArrowDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowDown, X } from 'lucide-react';
 
 const globalStyles = `
 @keyframes colorCycle {
@@ -57,169 +57,190 @@ type Club = {
   src: string;
   bg: string;
   desc: string;
-  banner: string;
+  banner?: string;
   details: ClubDetail[];
 };
 
-const DEFAULT_DETAILS: ClubDetail[] = [
-  {
-    title: 'Origin',
-    content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.'
-  },
-  {
-    title: 'Abilities & Skills',
-    content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.'
-  },
-  {
-    title: 'Personality',
-    content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.'
-  },
-  {
-    title: 'Requirements',
-    bullets: [
-      'Attend weekly meetings',
-      'Participate in group projects',
-      'Maintain a positive attitude'
-    ]
-  }
-];
-
-const DEFAULT_DETAILS1: ClubDetail[] = [
-  {
-    title: 'Hola',
-    content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.'
-  },
-  {
-    title: 'Abilities & Skills',
-    content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.'
-  },
-  {
-    title: 'Personality',
-    content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.'
-  },
-  {
-    title: 'Requirements',
-    bullets: [
-      'Attend weekly meetings',
-      'Participate in group projects',
-      'Maintain a positive attitude'
-    ]
-  }
-];
-
-
-
-
 const CLUB_CATEGORIES: Record<string, Club[]> = {
-  'Girls (Grade 1 to 6)': [
+  'Grades 1 to 3': [
     { 
-      id: 1, title: 'ROBOTICS CLUBB', src: '/images/girls-1-6/Art_design.png', bg: '#F4845F', 
+      id: 1, title: 'LITTLE EXPLORERS', src: '/images/grades-1-3/placeholder.png', bg: '#9b59b6', 
+      desc: 'Fun, engaging, and educational activities designed specially for our youngest learners to spark their curiosity and imagination.',
+      details: [
+        { title: 'Origin', content: 'Designed specifically for early learners to explore the world.' },
+        { title: 'Abilities & Skills', content: 'Focus on fine motor skills, social interaction, and basic cognitive abilities.' },
+        { title: 'Requirements', bullets: ['Eagerness to play and learn', 'Positive attitude'] }
+      ]
+    },
+  ],
+  'Girls (Grade 4 to 6)': [
+    { 
+      id: 1, title: 'ROBOTICS CLUB', src: '/images/girls-4-6/Art_design.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      banner: '/images/girls-1-6/hello.png',
-      details: DEFAULT_DETAILS
+      banner: '/images/girls-4-6/Art_design.png',
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
-      id: 2, title: 'ECO WARRIORS', src: '/images/girls-1-6/tech_coders.png', bg: '#6BBF7A', 
+      id: 2, title: 'ECO WARRIORS', src: '/images/girls-4-6/tech_coders.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banner: '/images/girls-1-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      banner: '/images/girls-4-6/Art_design.png',
+      details: [
+        { title: 'Origin', content: 'Formed by students passionate about nature and making a real-world environmental impact.' },
+        { title: 'Abilities & Skills', content: 'Learn ecological awareness, project planning, and community outreach strategies.' },
+        { title: 'Personality', content: 'Driven, caring, proactive, and environmentally conscious.' },
+        { title: 'Requirements', bullets: ['Participate in weekend activities', 'Contribute ideas', 'Help organize events'] }
+      ]
     },
     { 
-      id: 3, title: 'ART & DESIGN', src: '/images/girls-1-6/Art_design.png', bg: '#E882B4', 
+      id: 3, title: 'ART & DESIGN', src: '/images/girls-4-6/Art_design.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      banner: '/images/girls-1-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Created to provide a dedicated space for creative expression and artistic skill development.' },
+        { title: 'Abilities & Skills', content: 'Mastering color theory, composition, various mediums, and visual storytelling.' },
+        { title: 'Personality', content: 'Expressive, imaginative, patient, and open to feedback.' },
+        { title: 'Requirements', bullets: ['Bring basic art supplies', 'Participate in exhibitions', 'Respect peer artwork'] }
+      ]
     },
     { 
-      id: 4, title: 'TECH CODERS', src: '/images/girls-1-6/tech_coders.png', bg: '#6EB5FF', 
+      id: 4, title: 'TECH CODERS', src: '/images/girls-4-6/tech_coders.png', bg: '#6EB5FF', 
       desc: 'Dive deep into software development, web design, and app creation. No prior experience needed—just a passion for technology!',
-      banner: '/images/girls-1-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Initiated to bridge the gap in digital literacy and prepare students for the modern technological landscape.' },
+        { title: 'Abilities & Skills', content: 'Coding proficiency, logical structuring, debugging, and systems thinking.' },
+        { title: 'Personality', content: 'Detail-oriented, persistent, logical, and enthusiastic about tech.' },
+        { title: 'Requirements', bullets: ['Access to a computer', 'Willingness to practice coding', 'Collaborative mindset'] }
+      ]
     },
-        { 
-      id: 5, title: 'ART & DESIGN Hola', src: '/images/girls-1-6/Art_design.png', bg: '#E882B4', 
-      desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      banner: '/images/girls-1-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS1
-    },
-  
   ],
   'Girls (Grade 7 to 12)': [
     { 
       id: 1, title: 'ROBOTICS CLUB', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      banner: '/images/girls-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banner: '/images/girls-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 3, title: 'ART & DESIGN', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      banner: '/images/girls-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 4, title: 'TECH CODERS', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#6EB5FF', 
       desc: 'Dive deep into software development, web design, and app creation. No prior experience needed—just a passion for technology!',
-      banner: '/images/girls-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
   ],
   'Boys (Grade 4 to 6)': [
     { 
       id: 1, title: 'ROBOTICS CLUB', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      banner: '/images/boys-4-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banner: '/images/boys-4-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 3, title: 'ART & DESIGN', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      banner: '/images/boys-4-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 4, title: 'TECH CODERS', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#6EB5FF', 
       desc: 'Dive deep into software development, web design, and app creation. No prior experience needed—just a passion for technology!',
-      banner: '/images/boys-4-6/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
   ],
   'Boys (Grade 7 to 12)': [
     { 
       id: 1, title: 'ROBOTICS CLUB', src: '/images/boys-7-12/placeholder-mascot.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      banner: '/images/boys-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/boys-7-12/placeholder-mascot.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banner: '/images/boys-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 3, title: 'ART & DESIGN', src: '/images/boys-7-12/placeholder-mascot.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      banner: '/images/boys-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
     { 
       id: 4, title: 'TECH CODERS', src: '/images/boys-7-12/placeholder-mascot.png', bg: '#6EB5FF', 
       desc: 'Dive deep into software development, web design, and app creation. No prior experience needed—just a passion for technology!',
-      banner: '/images/boys-7-12/placeholder-banner.jpg',
-      details: DEFAULT_DETAILS
+      details: [
+        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
+        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
+        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
+        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
+      ]
     },
   ],
 };
@@ -228,13 +249,31 @@ type ViewState = 'home' | 'club-view';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
-  const [selectedCategory, setSelectedCategory] = useState<string>('Girls (Grade 1 to 6)');
+  const [selectedCategory, setSelectedCategory] = useState<string>('Girls (Grade 4 to 6)');
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   
+  const [showRegistration, setShowRegistration] = useState(false);
+  const [fullBannerSrc, setFullBannerSrc] = useState<string | null>(null);
+  
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      if (fullBannerSrc) {
+        setFullBannerSrc(null);
+      } else if (showRegistration) {
+        setShowRegistration(false);
+      } else if (currentView !== 'home') {
+        setCurrentView('home');
+      }
+    };
+    
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [currentView, fullBannerSrc, showRegistration]);
   
   useEffect(() => {
     const handleResize = () => {
@@ -245,12 +284,47 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const activeCategoryClubs = CLUB_CATEGORIES[selectedCategory] || CLUB_CATEGORIES['Girls (Grade 1 to 6)'];
+  const activeCategoryClubs = CLUB_CATEGORIES[selectedCategory] || CLUB_CATEGORIES['Girls (Grade 4 to 6)'];
+
+  const openRegistration = () => {
+    setShowRegistration(true);
+    window.history.pushState({ view: 'registration' }, '', '#registration');
+  };
+
+  const closeRegistration = () => {
+    if (window.history.state?.view === 'registration') {
+      window.history.back();
+    } else {
+      setShowRegistration(false);
+    }
+  };
+
+  const openFullBanner = (src: string) => {
+    setFullBannerSrc(src);
+    window.history.pushState({ view: 'full-banner' }, '', '#banner');
+  };
+
+  const closeFullBanner = () => {
+    if (window.history.state?.view === 'full-banner') {
+      window.history.back();
+    } else {
+      setFullBannerSrc(null);
+    }
+  };
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
     setActiveIndex(0);
     setCurrentView('club-view');
+    window.history.pushState({ view: 'club-view' }, '', '#club');
+  };
+
+  const goHome = () => {
+    if (window.history.state?.view === 'club-view') {
+      window.history.back();
+    } else {
+      setCurrentView('home');
+    }
   };
 
   const nextClub = () => {
@@ -297,8 +371,8 @@ export default function App() {
       <div className="h-[100dvh] w-full flex flex-col relative overflow-hidden animate-bg-gradient">
         <style>{globalStyles}</style>
         {/* Header */}
-        <header className="w-full px-4 sm:px-8 py-4 flex items-center justify-between z-10 shrink-0">
-          <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-12 sm:h-16 w-auto flex-shrink-0 drop-shadow-sm" />
+        <header className="w-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between z-10 shrink-0">
+          <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-10 sm:h-16 w-auto flex-shrink-0 drop-shadow-sm" />
           <div className="flex flex-col items-end justify-center ml-4">
              <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap">Middle East International School - AlMuruj</span>
              <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
@@ -306,15 +380,16 @@ export default function App() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-center relative z-10 overflow-y-auto">
-          <div className="flex flex-col items-center mb-10 sm:mb-16">
-            <img src="https://i.ibb.co/mV2NWp4v/Clubs.png" alt="Clubs" className="h-28 sm:h-40 md:h-48 mb-2 sm:mb-4 object-contain" />
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase">MEIS CLUBS</h1>
+        <main className="flex-1 w-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-start sm:justify-center relative z-10 min-h-0">
+          <div className="flex flex-col items-center mb-6 sm:mb-12 mt-4 sm:mt-0 shrink-0">
+            <img src="https://i.ibb.co/mV2NWp4v/Clubs.png" alt="Clubs" className="h-20 sm:h-32 md:h-40 mb-2 sm:mb-4 object-contain" />
+            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase">MEIS CLUBS</h1>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-3xl pb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-3xl flex-1 sm:flex-none overflow-y-auto sm:overflow-visible pb-4 sm:pb-0 hide-scrollbar">
             {[
-              { id: 'girls-1-6', label: 'Girls (Grade 1 to 6)', color: '#dd0922' },
+              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6' },
+              { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922' },
               { id: 'girls-7-12', label: 'Girls (Grade 7 to 12)', color: '#ec881b' },
               { id: 'boys-4-6', label: 'Boys (Grade 4 to 6)', color: '#73ba11' },
               { id: 'boys-7-12', label: 'Boys (Grade 7 to 12)', color: '#19aca4' }
@@ -322,16 +397,64 @@ export default function App() {
               <button
                 key={btn.id}
                 onClick={() => handleCategorySelect(btn.label)}
-                className="font-display text-xl sm:text-2xl md:text-3xl py-6 sm:py-10 px-4 rounded-3xl border-4 bg-white/60 backdrop-blur-sm transform transition-all duration-300 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-sm hover:shadow-md"
+                className="font-display text-lg sm:text-xl md:text-2xl py-4 sm:py-8 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/60 backdrop-blur-sm transform transition-all duration-300 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-sm hover:shadow-md min-h-[60px]"
                 style={{ borderColor: btn.color, color: btn.color }}
               >
                 {btn.label}
               </button>
             ))}
           </div>
+
+          <div className="mt-auto pt-4 pb-6 w-full max-w-3xl flex justify-center shrink-0">
+            <button 
+              onClick={openRegistration}
+              className="px-8 py-3 bg-[#1c448d] hover:bg-[#14336c] text-white rounded-full font-bold uppercase tracking-wider shadow-lg transition-transform hover:scale-105 active:scale-95"
+            >
+              Registration Details
+            </button>
+          </div>
         </main>
 
         <Footer />
+
+        {/* Registration Modal */}
+        {showRegistration && (
+          <div className="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm animate-in fade-in duration-200">
+            <div className="bg-white rounded-3xl w-full max-w-2xl overflow-hidden relative shadow-2xl flex flex-col max-h-[90vh]">
+              <div className="p-4 sm:p-6 border-b flex justify-between items-center bg-gray-50 shrink-0">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1c448d] uppercase tracking-wider">Registration Details</h2>
+                <button 
+                  onClick={closeRegistration} 
+                  className="p-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5 text-gray-700" />
+                </button>
+              </div>
+              <div className="p-6 sm:p-8 overflow-y-auto">
+                <div className="space-y-6 text-gray-700">
+                  <p className="font-medium text-lg">Welcome to MEIS Clubs Registration!</p>
+                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                    <h3 className="font-bold text-blue-900 mb-2">Registration Period</h3>
+                    <p>Opens: September 15th, 2026</p>
+                    <p>Closes: September 30th, 2026</p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold mb-2">Instructions:</h3>
+                    <ul className="list-disc list-inside space-y-2">
+                      <li>Ensure you select the appropriate club for your grade level.</li>
+                      <li>Spaces are limited and assigned on a first-come, first-served basis.</li>
+                      <li>Each student can register for a maximum of two clubs.</li>
+                      <li>Parental consent forms must be submitted physically to the homeroom teacher.</li>
+                    </ul>
+                  </div>
+                  <p className="text-sm text-gray-500 italic mt-6">
+                    * This is dummy data for now. Full registration links and detailed instructions will be added shortly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -405,24 +528,24 @@ export default function App() {
         ></div>
 
         {/* Header (Top Left) */}
-        <div className="absolute top-0 left-0 w-full p-6 sm:p-10 z-50 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="absolute top-0 left-0 w-full p-4 sm:p-10 z-50 flex items-center justify-between">
+          <div className="flex items-center gap-3 sm:gap-4">
             <button 
-              onClick={() => setCurrentView('home')}
-              className="p-3 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full text-white transition-colors"
+              onClick={goHome}
+              className="p-2 sm:p-3 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full text-white transition-colors"
             >
-              <ArrowLeft className="w-6 h-6" />
+              <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            <div className="flex flex-nowrap items-center whitespace-nowrap overflow-hidden gap-3">
-              <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-12 w-auto hidden sm:block object-contain" />
+            <div className="flex flex-nowrap items-center whitespace-nowrap overflow-hidden gap-2 sm:gap-3">
+              <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-8 sm:h-12 w-auto hidden sm:block object-contain" />
               <div className="leading-tight text-white hidden sm:block">
-                <p className="text-[14px] font-bold tracking-tight">Middle East International School - AlMuruj</p>
-                <p className="text-[12px] opacity-90 text-left" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</p>
+                <p className="text-[12px] sm:text-[14px] font-bold tracking-tight">Middle East International School - AlMuruj</p>
+                <p className="text-[10px] sm:text-[12px] opacity-90 text-left" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</p>
               </div>
             </div>
           </div>
-          <div className="flex gap-4">
-            <div className="bg-white/20 px-4 py-1.5 rounded-full text-[12px] font-bold uppercase tracking-widest border border-white/30 text-white">
+          <div className="flex gap-2 sm:gap-4">
+            <div className="bg-white/20 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-[12px] font-bold uppercase tracking-widest border border-white/30 text-white truncate max-w-[150px] sm:max-w-none">
               {selectedCategory}
             </div>
           </div>
@@ -472,10 +595,10 @@ export default function App() {
         </div>
 
         {/* Bottom Controls */}
-        <div className="absolute bottom-6 sm:bottom-12 left-0 w-full px-6 sm:px-12 z-50 flex items-end justify-between pointer-events-none">
+        <div className="absolute bottom-6 sm:bottom-12 left-0 w-full px-4 sm:px-12 z-50 flex items-end justify-between pointer-events-none">
           {/* Left Side: Navigation Arrows & Swipe Text */}
           <div className="flex flex-col items-center sm:items-start gap-3 pointer-events-auto">
-            <div className="sm:hidden text-white text-[12px] font-bold tracking-[0.2em] uppercase animate-pulse">
+            <div className="sm:hidden text-white text-[10px] font-bold tracking-[0.2em] uppercase animate-pulse">
               SWIPE
             </div>
             <div className="flex gap-2 sm:gap-4">
@@ -495,7 +618,7 @@ export default function App() {
           </div>
 
           {/* Right Side: Discover It Button & Indicators */}
-          <div className="flex flex-col items-end gap-6 pointer-events-auto">
+          <div className="flex flex-col items-end gap-4 sm:gap-6 pointer-events-auto">
             <div className="hidden sm:flex gap-1 mb-2">
               {activeCategoryClubs.map((_, idx) => (
                  <div key={idx} className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeIndex ? 'w-12 bg-white' : 'w-1.5 bg-white/30'}`}></div>
@@ -503,47 +626,47 @@ export default function App() {
             </div>
             <button 
               onClick={scrollToDetails}
-              className="group flex items-center gap-2 sm:gap-3 bg-white text-black px-5 py-3 sm:px-8 sm:py-4 rounded-2xl font-display text-lg sm:text-2xl uppercase tracking-wide hover:scale-105 transition-transform shadow-xl whitespace-nowrap"
+              className="group flex items-center gap-2 sm:gap-3 bg-white text-black px-4 py-3 sm:px-8 sm:py-4 rounded-2xl font-display text-base sm:text-2xl uppercase tracking-wide hover:scale-105 transition-transform shadow-xl whitespace-nowrap"
             >
               <span>Discover It</span>
-              <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3px] group-hover:translate-y-1 transition-transform shrink-0" />
+              <ArrowDown className="w-4 h-4 sm:w-6 sm:h-6 stroke-[3px] group-hover:translate-y-1 transition-transform shrink-0" />
             </button>
           </div>
         </div>
       </div>
 
       {/* Part B: Details Section */}
-      <div id="details-section" className="w-full bg-white text-gray-800 py-16 sm:py-24 px-6 sm:px-12 lg:px-24">
+      <div id="details-section" className="w-full bg-white text-gray-800 py-12 sm:py-24 px-6 sm:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-12 sm:mb-16">
             <div>
               <h2 
-                className="font-display text-5xl sm:text-7xl mb-6 uppercase tracking-wide leading-none"
+                className="font-display text-4xl sm:text-7xl mb-4 sm:mb-6 uppercase tracking-wide leading-none"
                 style={{ color: activeClub.bg, transition: 'color 650ms ease' }}
               >
                 {activeClub.title}
               </h2>
-              <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed font-medium">
+              <p className="text-lg sm:text-2xl text-gray-600 leading-relaxed font-medium">
                 {activeClub.desc}
               </p>
             </div>
             
-            <div className="space-y-8 pt-2">
+            <div className="space-y-6 sm:space-y-8 pt-2">
               {activeClub.details.map((detail, idx) => (
                 <div key={idx}>
                   <h3 
-                    className="font-bold text-xl uppercase tracking-wider mb-2"
+                    className="font-bold text-lg sm:text-xl uppercase tracking-wider mb-2"
                     style={{ color: activeClub.bg, transition: 'color 650ms ease' }}
                   >
                     {detail.title}
                   </h3>
                   {detail.content && (
-                    <p className="text-gray-600 mb-2">
+                    <p className="text-gray-600 mb-2 text-sm sm:text-base">
                       {detail.content}
                     </p>
                   )}
                   {detail.bullets && detail.bullets.length > 0 && (
-                    <ul className="list-disc list-inside text-gray-600 space-y-2 mt-2">
+                    <ul className="list-disc list-inside text-gray-600 space-y-1 sm:space-y-2 mt-2 text-sm sm:text-base">
                       {detail.bullets.map((bullet, bIdx) => (
                         <li key={bIdx} className="leading-relaxed">
                           {bullet}
@@ -556,29 +679,47 @@ export default function App() {
             </div>
           </div>
 
-          <div className="w-full rounded-3xl overflow-hidden shadow-2xl mb-8 border border-gray-100">
-            <img 
-              src={activeClub.banner} 
-              alt={`${activeClub.title} Banner`}
-              className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-            />
-          </div>
-
-          <div className="flex justify-center">
-            <a 
-              href={activeClub.banner}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-5 rounded-full text-white font-display uppercase tracking-widest text-xl shadow-xl transform transition-transform hover:scale-105 active:scale-95"
-              style={{ backgroundColor: activeClub.bg, transition: 'background-color 650ms ease' }}
-            >
-              View Full Image
-            </a>
-          </div>
+          {activeClub.banner && (
+            <div className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 relative group">
+              <img 
+                src={activeClub.banner} 
+                alt={`${activeClub.title} Banner`}
+                className="w-full h-[250px] sm:h-[400px] lg:h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300">
+                <button 
+                  onClick={() => openFullBanner(activeClub.banner!)}
+                  className="px-6 py-3 sm:px-10 sm:py-5 bg-white/90 hover:bg-white backdrop-blur-md rounded-full text-black font-display uppercase tracking-widest text-sm sm:text-xl shadow-2xl transform transition-transform hover:scale-105 active:scale-95"
+                >
+                  View Full Image
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer />
+
+      {/* Full Banner Modal */}
+      {fullBannerSrc && (
+        <div className="fixed inset-0 z-[200] bg-black/90 flex flex-col items-center justify-center backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="absolute top-0 w-full p-4 flex justify-end z-[210]">
+            <button 
+              onClick={closeFullBanner}
+              className="p-3 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-md transition-colors"
+            >
+              <X className="w-6 h-6 sm:w-8 sm:h-8" />
+            </button>
+          </div>
+          <div className="w-full h-full p-4 sm:p-12 flex items-center justify-center">
+            <img 
+              src={fullBannerSrc} 
+              alt="Full Banner View" 
+              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
