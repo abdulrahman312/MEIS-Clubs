@@ -680,19 +680,21 @@ export default function App() {
           </div>
 
           {activeClub.banner && (
-            <div className="w-full rounded-3xl overflow-hidden shadow-2xl border border-gray-100 relative group">
-              <img 
-                src={activeClub.banner} 
-                alt={`${activeClub.title} Banner`}
-                className="w-full h-[250px] sm:h-[400px] lg:h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-all duration-300">
-                <button 
-                  onClick={() => openFullBanner(activeClub.banner!)}
-                  className="px-6 py-3 sm:px-10 sm:py-5 bg-white/90 hover:bg-white backdrop-blur-md rounded-full text-black font-display uppercase tracking-widest text-sm sm:text-xl shadow-2xl transform transition-transform hover:scale-105 active:scale-95"
-                >
-                  View Full Image
-                </button>
+            <div className="flex flex-col items-center gap-6">
+              <button 
+                onClick={() => openFullBanner(activeClub.banner!)}
+                className="px-8 py-3 sm:px-10 sm:py-4 rounded-full text-white font-display uppercase tracking-widest text-sm sm:text-lg shadow-xl transform transition-transform hover:scale-105 active:scale-95"
+                style={{ backgroundColor: activeClub.bg, transition: 'background-color 650ms ease' }}
+              >
+                View Full Image
+              </button>
+              <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex justify-center bg-gray-50">
+                <img 
+                  src={activeClub.banner} 
+                  alt={`${activeClub.title} Banner`}
+                  className="w-full max-w-3xl h-auto object-contain"
+                  style={{ maxHeight: '300px' }}
+                />
               </div>
             </div>
           )}
