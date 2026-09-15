@@ -57,7 +57,7 @@ type Club = {
   src: string;
   bg: string;
   desc: string;
-  banner?: string;
+  banners?: string[];
   details: ClubDetail[];
 };
 
@@ -77,7 +77,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 1, title: 'ROBOTICS CLUB', src: '/images/girls-4-6/Art_design.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      banner: '/images/girls-4-6/Art_design.png',
+      banners: ['/images/girls-4-6/Art_design.png', '/images/girls-4-6/hello.png'],
       details: [
         { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
         { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
@@ -88,7 +88,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/girls-4-6/tech_coders.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banner: '/images/girls-4-6/Art_design.png',
+      banners: ['/images/girls-4-6/tech_coders.png'],
       details: [
         { title: 'Origin', content: 'Formed by students passionate about nature and making a real-world environmental impact.' },
         { title: 'Abilities & Skills', content: 'Learn ecological awareness, project planning, and community outreach strategies.' },
@@ -99,6 +99,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 3, title: 'ART & DESIGN', src: '/images/girls-4-6/Art_design.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
+      banners: ['/images/girls-4-6/hi.png', '/images/girls-4-6/Art_design.png', '/images/girls-4-6/hello.png'],
       details: [
         { title: 'Origin', content: 'Created to provide a dedicated space for creative expression and artistic skill development.' },
         { title: 'Abilities & Skills', content: 'Mastering color theory, composition, various mediums, and visual storytelling.' },
@@ -121,6 +122,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 1, title: 'ROBOTICS CLUB', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#F4845F', 
       desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
+      banners: ['/images/girls-7-12/placeholder-banner.jpg'],
       details: [
         { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
         { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
@@ -131,6 +133,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/girls-7-12/placeholder-mascot.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
+      banners: ['/images/girls-7-12/placeholder-banner.jpg', '/images/girls-7-12/placeholder-mascot.png'],
       details: [
         { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
         { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
@@ -173,6 +176,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 2, title: 'ECO WARRIORS', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#6BBF7A', 
       desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
+      banners: ['/images/boys-4-6/placeholder-banner.jpg'],
       details: [
         { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
         { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
@@ -225,6 +229,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     { 
       id: 3, title: 'ART & DESIGN', src: '/images/boys-7-12/placeholder-mascot.png', bg: '#E882B4', 
       desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
+      banners: ['/images/boys-7-12/placeholder-banner.jpg', '/images/boys-7-12/placeholder-mascot.png', '/images/boys-7-12/placeholder-banner.jpg'],
       details: [
         { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
         { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
@@ -255,15 +260,16 @@ export default function App() {
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   
   const [showRegistration, setShowRegistration] = useState(false);
-  const [fullBannerSrc, setFullBannerSrc] = useState<string | null>(null);
+  const [fullBannerOpen, setFullBannerOpen] = useState(false);
+  const [bannerIndex, setBannerIndex] = useState(0);
   
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   
   useEffect(() => {
     const handlePopState = (e: PopStateEvent) => {
-      if (fullBannerSrc) {
-        setFullBannerSrc(null);
+      if (fullBannerOpen) {
+        setFullBannerOpen(false);
       } else if (showRegistration) {
         setShowRegistration(false);
       } else if (currentView !== 'home') {
@@ -273,7 +279,7 @@ export default function App() {
     
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [currentView, fullBannerSrc, showRegistration]);
+  }, [currentView, fullBannerOpen, showRegistration]);
   
   useEffect(() => {
     const handleResize = () => {
@@ -284,7 +290,12 @@ export default function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    setBannerIndex(0);
+  }, [activeIndex, selectedCategory]);
+
   const activeCategoryClubs = CLUB_CATEGORIES[selectedCategory] || CLUB_CATEGORIES['Girls (Grade 4 to 6)'];
+  const activeClub = activeCategoryClubs[activeIndex];
 
   const openRegistration = () => {
     setShowRegistration(true);
@@ -299,8 +310,8 @@ export default function App() {
     }
   };
 
-  const openFullBanner = (src: string) => {
-    setFullBannerSrc(src);
+  const openFullBanner = () => {
+    setFullBannerOpen(true);
     window.history.pushState({ view: 'full-banner' }, '', '#banner');
   };
 
@@ -308,7 +319,7 @@ export default function App() {
     if (window.history.state?.view === 'full-banner') {
       window.history.back();
     } else {
-      setFullBannerSrc(null);
+      setFullBannerOpen(false);
     }
   };
 
@@ -507,8 +518,6 @@ export default function App() {
     }
   };
 
-  const activeClub = activeCategoryClubs[activeIndex];
-
   return (
     <div className="w-full min-h-screen bg-gray-50 flex flex-col font-sans">
       {/* 100vh Hero Carousel Section */}
@@ -679,20 +688,42 @@ export default function App() {
             </div>
           </div>
 
-          {activeClub.banner && (
+          {activeClub.banners && activeClub.banners.length > 0 && (
             <div className="flex flex-col items-center gap-6">
-              <button 
-                onClick={() => openFullBanner(activeClub.banner!)}
-                className="px-8 py-3 sm:px-10 sm:py-4 rounded-full text-white font-display uppercase tracking-widest text-sm sm:text-lg shadow-xl transform transition-transform hover:scale-105 active:scale-95"
-                style={{ backgroundColor: activeClub.bg, transition: 'background-color 650ms ease' }}
-              >
-                View Full Image
-              </button>
-              <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex justify-center bg-gray-50">
+              <div className="flex items-center gap-4">
+                {activeClub.banners.length > 1 && (
+                  <button 
+                    onClick={() => setBannerIndex(prev => (prev - 1 + activeClub.banners!.length) % activeClub.banners!.length)}
+                    className="p-1 sm:p-2 transition-transform hover:scale-110 active:scale-95 focus:outline-none"
+                    style={{ color: activeClub.bg }}
+                  >
+                    <ArrowLeft className="w-8 h-8 sm:w-10 sm:h-10" strokeWidth={2} />
+                  </button>
+                )}
+                <button 
+                  onClick={openFullBanner}
+                  className="px-8 py-3 sm:px-10 sm:py-4 rounded-full text-white font-display uppercase tracking-widest text-sm sm:text-lg shadow-xl transform transition-transform hover:scale-105 active:scale-95 focus:outline-none"
+                  style={{ backgroundColor: activeClub.bg, transition: 'background-color 650ms ease' }}
+                >
+                  View Full Image
+                </button>
+                {activeClub.banners.length > 1 && (
+                  <button 
+                    onClick={() => setBannerIndex(prev => (prev + 1) % activeClub.banners!.length)}
+                    className="p-1 sm:p-2 transition-transform hover:scale-110 active:scale-95 focus:outline-none"
+                    style={{ color: activeClub.bg }}
+                  >
+                    <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10" strokeWidth={2} />
+                  </button>
+                )}
+              </div>
+              
+              <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex justify-center bg-gray-50 relative group">
                 <img 
-                  src={activeClub.banner} 
-                  alt={`${activeClub.title} Banner`}
-                  className="w-full max-w-3xl h-auto object-contain"
+                  key={bannerIndex}
+                  src={activeClub.banners[bannerIndex]} 
+                  alt={`${activeClub.title} Banner ${bannerIndex + 1}`}
+                  className="w-full max-w-3xl h-auto object-contain transition-opacity duration-300 animate-in fade-in"
                   style={{ maxHeight: '300px' }}
                 />
               </div>
@@ -703,8 +734,8 @@ export default function App() {
       <Footer />
 
       {/* Full Banner Modal */}
-      {fullBannerSrc && (
-        <div className="fixed inset-0 z-[200] bg-black/90 flex flex-col items-center justify-center backdrop-blur-sm animate-in fade-in duration-200">
+      {fullBannerOpen && activeClub.banners && activeClub.banners.length > 0 && (
+        <div className="fixed inset-0 z-[200] bg-black/95 flex flex-col items-center justify-center backdrop-blur-sm animate-in fade-in duration-200">
           <div className="absolute top-0 w-full p-4 flex justify-end z-[210]">
             <button 
               onClick={closeFullBanner}
@@ -713,12 +744,37 @@ export default function App() {
               <X className="w-6 h-6 sm:w-8 sm:h-8" />
             </button>
           </div>
-          <div className="w-full h-full p-4 sm:p-12 flex items-center justify-center">
+          <div className="w-full h-full p-4 sm:p-12 flex items-center justify-center relative">
+            {activeClub.banners.length > 1 && (
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setBannerIndex(prev => (prev - 1 + activeClub.banners!.length) % activeClub.banners!.length);
+                }}
+                className="absolute left-2 sm:left-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-md transition-transform hover:scale-110 active:scale-95 z-[210]"
+              >
+                <ArrowLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+            )}
+            
             <img 
-              src={fullBannerSrc} 
-              alt="Full Banner View" 
-              className="max-w-full max-h-full object-contain rounded-xl shadow-2xl select-none"
+              key={bannerIndex}
+              src={activeClub.banners[bannerIndex]} 
+              alt={`Full Banner View ${bannerIndex + 1}`} 
+              className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl select-none transition-opacity duration-300 animate-in fade-in"
             />
+            
+            {activeClub.banners.length > 1 && (
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setBannerIndex(prev => (prev + 1) % activeClub.banners!.length);
+                }}
+                className="absolute right-2 sm:right-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-md transition-transform hover:scale-110 active:scale-95 z-[210]"
+              >
+                <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
+            )}
           </div>
         </div>
       )}
