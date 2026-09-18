@@ -241,7 +241,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/boys-4-6/tomorrow_cn.png',
   bg: '#319795',
   desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',
-  banners: ['/images/boys-4-6/Tomorrow Code.jpg'],
+  banners: ['/images/boys-4-6/Tomorrow Code.png'],
   details: [
     { 
       title: 'Skills Gained', 
