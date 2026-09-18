@@ -459,14 +459,15 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-3xl flex-1 sm:flex-none overflow-y-auto sm:overflow-visible pb-4 sm:pb-0 hide-scrollbar">
             {[
-              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6' },
-              { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922' },
-              { id: 'girls-7-12', label: 'Girls (Grade 7 to 12)', color: '#ec881b' },
+              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6', disabled: true },
+              { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922', disabled: true  },
+              { id: 'girls-7-12', label: 'Girls (Grade 7 to 12)', color: '#ec881b', disabled: true  },
               { id: 'boys-4-6', label: 'Boys (Grade 4 to 6)', color: '#73ba11' },
-              { id: 'boys-7-12', label: 'Boys (Grade 7 to 12)', color: '#19aca4' }
+              { id: 'boys-7-12', label: 'Boys (Grade 7 to 12)', color: '#19aca4', disabled: true  }
             ].map((btn) => (
               <button
                 key={btn.id}
+                disabled={btn.disabled}
                 onClick={() => handleCategorySelect(btn.label)}
                 className="font-display text-lg sm:text-xl md:text-2xl py-4 sm:py-8 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/60 backdrop-blur-sm transform transition-all duration-300 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-sm hover:shadow-md min-h-[60px]"
                 style={{ borderColor: btn.color, color: btn.color }}
@@ -478,6 +479,7 @@ export default function App() {
 
           <div className="mt-auto pt-4 pb-6 w-full max-w-3xl flex justify-center shrink-0">
             <button 
+            disabled
               onClick={openRegistration}
               className="px-8 py-3 bg-[#1c448d] hover:bg-[#14336c] text-white rounded-full font-bold uppercase tracking-wider shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
