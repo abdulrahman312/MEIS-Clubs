@@ -205,7 +205,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/boys-4-6/stem_cn.png',
   bg: '#4D9EE0',
   desc: 'STEM Club – Where Ideas Come to Life! A fun, hands-on club where students build, code, create, and innovate through exciting projects. Give your child the opportunity to learn by doing! Our STEM Club for Grades 4–6 introduces students to exciting real-world projects.',
-  banners: ['/images/boys-4-6/stem.jpg'],
+  banners: ['/images/boys-4-6/STEM.jpg'],
   details: [
     { title: 'Skills Gained', bullets: ['Creativity & Innovation', 'Tech & Engineering', 'Coding & Programming', 'Problem-Solving & Critical Thinking', 'Design & Building Skills', 'Teamwork & Collaboration', 'Communication & Project Skills', 'Confidence & Hands-on Learning'] },
     { title: 'Expected Outcome', content: 'Create, Code, Solve, and Innovate. Students will develop creativity, coding, problem-solving, teamwork, and hands-on STEM skills through exciting real-world projects.' }
@@ -229,7 +229,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/boys-4-6/bio_cn.png',
   bg: '#8C7AE6',
   desc: 'The dissection club provides students with particular experience in anatomy and developing scientific skills.',
-  banners: ['/images/boys-4-6/bio voyage.jpg'],
+  banners: ['/images/boys-4-6/Bio Voyage.jpg'],
   details: [
     { title: 'Skills Gained', bullets: ['Respect for living organisms', 'Leadership', 'Connecting theory with practice', 'Curiosity', 'Teamwork'] },
     { title: 'Expected Outcome', content: 'Prepare students for future careers.' }
@@ -241,7 +241,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/boys-4-6/tomorrow_cn.png',
   bg: '#319795',
   desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',
-  banners: ['/images/boys-4-6/tomorrow code.jpg'],
+  banners: ['/images/boys-4-6/Tomorrow Code.jpg'],
   details: [
     { 
       title: 'Skills Gained', 
