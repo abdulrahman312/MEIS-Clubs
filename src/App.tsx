@@ -163,47 +163,107 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     },
   ],
   'Boys (Grade 4 to 6)': [
+    {
+  id: 1,
+  title: 'Scouting Club',
+  src: '/images/boys-4-6/scout_cn.png',
+  bg: '#EA7655',
+  desc: 'عالم من المغامرة والاعتماد على النفس يجمع بين المتعة واستكشاف الطبيعة وتطوير الذات.',
+  banners: ['/images/boys-4-6/scout.jpg'],
+  details: [
+    { title: 'Skills Gained', bullets: ['الاعتماد على النفس', 'تحمل المسؤولية', 'التعامل مع البيئة', 'التخييم', 'استخدام الخرائط والبوصلة', 'العقد والربطات', 'الإسعافات الأولية'] },
+    { title: 'Expected Outcome', bullets: ['تطور السلوك والشخصية', 'تحسن روح الجماعة', 'اكتساب مهارات عمل جادة', 'ارتفاع مستوى اللياقة والنشاط'] }
+  ]
+},
+{
+  id: 2,
+  title: 'نادي مدار',
+  src: '/images/boys-4-6/madar_cn.png',
+  bg: '#48BB78',
+  desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
+  banners: ['/images/boys-4-6/madar.jpeg'],
+  details: [
+    { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
+    { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
+  ]
+},
+{
+  id: 3,
+  title: 'Drama Club',
+  src: '/images/boys-4-6/drama_cn.png',
+  bg: '#E26D9B',
+  desc: "This 15-class program introduces boys in Grades 4–6 to the fundamentals of drama—voice, movement, character, improvisation, and performance—through progressively challenging rounds. Each round builds directly on the skills of the round before it and ends with a hands-on activity that lets students apply what they've learned in a fun, low-pressure setting. The program culminates in a Final Showcase performed for parents and the school community.",
+  
+  details: [
+    { title: 'Skills Gained', bullets: ['Voice projection and clear speech', 'Physical and facial expression of emotion', 'Character creation and embodiment', 'Emotional range and convincing delivery', 'Script reading with expression', 'Stage-blocking vocabulary and technique'] },
+    { title: 'Expected Outcome', bullets: ['Comfort and confidence within the group', 'Cooperation during unscripted group activities', 'Ability to stay in character while adapting to the unexpected', 'Successful casting and selection of the final showcase play', 'Confident full performance of the play, in costume, with props and cues, for a live audience'] }
+  ]
+},
+{
+  id: 4,
+  title: 'STEM CLUB',
+  src: '/images/boys-4-6/stem_cn.png',
+  bg: '#4D9EE0',
+  desc: 'STEM Club – Where Ideas Come to Life! A fun, hands-on club where students build, code, create, and innovate through exciting projects. Give your child the opportunity to learn by doing! Our STEM Club for Grades 4–6 introduces students to exciting real-world projects.',
+  banners: ['/images/boys-4-6/stem.jpg'],
+  details: [
+    { title: 'Skills Gained', bullets: ['Creativity & Innovation', 'Tech & Engineering', 'Coding & Programming', 'Problem-Solving & Critical Thinking', 'Design & Building Skills', 'Teamwork & Collaboration', 'Communication & Project Skills', 'Confidence & Hands-on Learning'] },
+    { title: 'Expected Outcome', content: 'Create, Code, Solve, and Innovate. Students will develop creativity, coding, problem-solving, teamwork, and hands-on STEM skills through exciting real-world projects.' }
+  ]
+},
+{
+  id: 5,
+  title: 'Bildits STEAM Construction Workshop by SAMACO',
+  src: '/images/boys-4-6/bildits_cn.png',
+  bg: '#E5A038',
+  desc: 'Real Construction Experience.',
+  banners: ['/images/boys-4-6/smaco1.jpg', '/images/boys-4-6/samaco2.jpg'],
+  details: [
+    { title: 'Skills Gained', bullets: ['21st-century skills', 'Fine motor skills', 'Planning', 'Patience', 'Communication', 'Responsibility'] },
+    { title: 'Expected Outcome', content: 'Students will be able to face challenges, solve problems, think critically, set up goals, and plan to achieve them.' }
+  ]
+},
+{
+  id: 6,
+  title: 'Bio Voyage club',
+  src: '/images/boys-4-6/bio_cn.png',
+  bg: '#8C7AE6',
+  desc: 'The dissection club provides students with particular experience in anatomy and developing scientific skills.',
+  banners: ['/images/boys-4-6/bio voyage.jpg'],
+  details: [
+    { title: 'Skills Gained', bullets: ['Respect for living organisms', 'Leadership', 'Connecting theory with practice', 'Curiosity', 'Teamwork'] },
+    { title: 'Expected Outcome', content: 'Prepare students for future careers.' }
+  ]
+},
+{
+  id: 7,
+  title: "Tomorrow's Code Club",
+  src: '/images/boys-4-6/tomorrow_cn.png',
+  bg: '#319795',
+  desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',
+  banners: ['/images/boys-4-6/tomorrow code.jpg'],
+  details: [
     { 
-      id: 1, title: 'ROBOTICS CLUB', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#F4845F', 
-      desc: 'Build, program, and innovate! Join us to explore the fascinating world of automation, coding, and engineering. Perfect for future inventors.',
-      details: [
-        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
-        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
-        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
-        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
-      ]
+      title: 'Skills Gained', 
+      bullets: [
+        'Problem-Solving & Algorithmic Thinking', 
+        'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 
+        'Block-Based Coding & Logic Design', 
+        'Teamwork, Collaboration, & Communication', 
+        'Creative Thinking & Innovation'
+      ] 
     },
     { 
-      id: 2, title: 'ECO WARRIORS', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#6BBF7A', 
-      desc: 'Dedicated to preserving our environment. We plant trees, run recycling campaigns, and learn about sustainable living to protect our planet.',
-      banners: ['/images/boys-4-6/placeholder-banner.jpg'],
-      details: [
-        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
-        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
-        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
-        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
-      ]
-    },
-    { 
-      id: 3, title: 'ART & DESIGN', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#E882B4', 
-      desc: 'Unleash your creativity! From traditional canvas painting to digital 3D modeling, express yourself in a supportive, colorful environment.',
-      details: [
-        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
-        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
-        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
-        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
-      ]
-    },
-    { 
-      id: 4, title: 'TECH CODERS', src: '/images/boys-4-6/placeholder-mascot.png', bg: '#6EB5FF', 
-      desc: 'Dive deep into software development, web design, and app creation. No prior experience needed—just a passion for technology!',
-      details: [
-        { title: 'Origin', content: 'Established with the goal of nurturing student talent and providing a creative outlet beyond the standard curriculum. A place where ideas flourish.' },
-        { title: 'Abilities & Skills', content: 'Members develop critical thinking, teamwork, advanced technical proficiencies, and creative problem-solving techniques.' },
-        { title: 'Personality', content: 'Innovative, dedicated, highly collaborative, and always eager to learn and experiment with new concepts.' },
-        { title: 'Requirements', bullets: ['Attend weekly meetings', 'Participate in group projects', 'Maintain a positive attitude'] }
-      ]
-    },
+      title: 'Expected Outcome', 
+      bullets: [
+        'Ability to design, build, and program functional robotic and mechanical models.', 
+        'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 
+        'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 
+        'Completion of practical STEM projects ready for presentation and competition.'
+      ] 
+    }
+  ]
+}
   ],
   'Boys (Grade 7 to 12)': [
     { 
