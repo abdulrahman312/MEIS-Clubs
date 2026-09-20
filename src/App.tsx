@@ -62,16 +62,64 @@ type Club = {
 };
 
 const CLUB_CATEGORIES: Record<string, Club[]> = {
-  'Grades 1 to 3': [
-    { 
-      id: 1, title: 'LITTLE EXPLORERS', src: '/images/grades-1-3/placeholder.png', bg: '#9b59b6', 
-      desc: 'Fun, engaging, and educational activities designed specially for our youngest learners to spark their curiosity and imagination.',
-      details: [
-        { title: 'Origin', content: 'Designed specifically for early learners to explore the world.' },
-        { title: 'Abilities & Skills', content: 'Focus on fine motor skills, social interaction, and basic cognitive abilities.' },
-        { title: 'Requirements', bullets: ['Eagerness to play and learn', 'Positive attitude'] }
-      ]
-    },
+'Grades 1 to 3': [ 
+    {  
+      id: 1, title: 'Art & Craft', src: '/images/grades-1-3/art_cn.png', bg: '#FF6B81',  
+      desc: 'A fun club where students explore drawing, painting, coloring, crafts, and creative art projects.', 
+      banners: ['/images/grades-1-3/ART.png'], 
+      details: [ 
+        { title: 'Skills Gained', content: 'Creativity,imagination, focus, and artistic expression.' }, 
+        { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' } 
+         
+      ] 
+    }, 
+    {  
+      id: 2, title: 'BUILD-IT', src: '/images/grades-1-3/buildit_cn.png', bg: '#FFA502',  
+      desc: 'The Build It Club is a STEM club for Grades 1, 2, and 3. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.', 
+      banners: ['/images/grades-1-3/BUILD-IT(1).jpeg', '/images/grades-1-3/BUILD-IT(2).jpeg'], 
+      details: [ 
+        { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
+        { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
+         
+      ] 
+    }, 
+    {  
+      id: 3, title: 'Cooking', src: '/images/grades-1-3/cooking_cn.png', bg: '#FF4757',  
+      desc: 'Fun, hands-on cooking activities where students prepare simple and healthy recipes.', 
+      banners: ['/images/grades-1-3/COOKING.png'], 
+      details: [ 
+        { title: 'Skills Gained', content: 'Cooking basics, teamwork, creativity, hygiene, and following instructions.' }, 
+        { title: 'Expected Outcome', content: 'Students will safely prepare simple recipes, work as a team, and gain confidence in the kitchen.' } 
+         
+      ] 
+    }, 
+    {  
+      id: 4, title: 'Robotics', src: '/images/grades-1-3/robotics_cn.png', bg: '#1E90FF',  
+      desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.', 
+      banners: ['/images/grades-1-3/ROBOTICS.png'], 
+      details: [ 
+        { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] }, 
+        { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] } 
+      ] 
+    }, 
+    {  
+      id: 5, title: 'Sports', src: '/images/grades-1-3/sports_cn.png', bg: '#2ED573',  
+      desc: 'A fun club with sports, movement games, and team activities.', 
+      banners: ['/images/grades-1-3/SPORTS.jpeg'], 
+      details: [ 
+        { title: 'Skills Gained', content: 'Teamwork, coordination, discipline, confidence, and fitness' }, 
+        { title: 'Expected Outcome', content: 'Students will improve physical skills, follow rules, work in teams, and develop good sportsmanship.' } 
+      ] 
+    }, 
+    {  
+      id: 6, title: 'STEM', src: '/images/grades-1-3/stem_cn.png', bg: '#5352ED',  
+      desc: 'A fun club where students explore science, technology, engineering, and math through simple hands-on activities.', 
+      banners: ['/images/grades-1-3/STEM.jpeg'], 
+      details: [ 
+        { title: 'Skills Gained', content: 'Problem-solving, creativity, teamwork, critical thinking, and observation.' }, 
+        { title: 'Expected Outcome', content: 'Students will enjoy STEM learning, build simple projects, solve challenges, and work confidently in teams.' } 
+      ] 
+    } 
   ],
   'Girls (Grade 4 to 6)': [
     { 
@@ -475,7 +523,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-3xl flex-1 sm:flex-none overflow-y-auto sm:overflow-visible pb-4 sm:pb-0 hide-scrollbar">
             {[
-              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6', disabled: true },
+              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6'},
               { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922', disabled: true  },
               { id: 'girls-7-12', label: 'Girls (Grade 7 to 12)', color: '#ec881b', disabled: true  },
               { id: 'boys-4-6', label: 'Boys (Grade 4 to 6)', color: '#73ba11' },
