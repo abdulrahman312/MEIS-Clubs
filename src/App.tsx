@@ -163,16 +163,32 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     },
   ],
   'Boys (Grade 4 to 6)': [
-    {
+  {
   id: 1,
   title: 'Scouting Club',
   src: '/images/boys-4-6/scout_cn.png',
   bg: '#EA7655',
-  desc: 'عالم من المغامرة والاعتماد على النفس يجمع بين المتعة واستكشاف الطبيعة وتطوير الذات.',
+  desc: 'A four-week adventure that builds self-reliance, leadership, and teamwork. Members explore nature, learn essential survival skills, and participate in an immersive outdoor Scout trip and community service project.',
   banners: ['/images/boys-4-6/scout.jpg'],
   details: [
-    { title: 'Skills Gained', bullets: ['الاعتماد على النفس', 'تحمل المسؤولية', 'التعامل مع البيئة', 'التخييم', 'استخدام الخرائط والبوصلة', 'العقد والربطات', 'الإسعافات الأولية'] },
-    { title: 'Expected Outcome', bullets: ['تطور السلوك والشخصية', 'تحسن روح الجماعة', 'اكتساب مهارات عمل جادة', 'ارتفاع مستوى اللياقة والنشاط'] }
+    { 
+      title: 'Program Highlights', 
+      bullets: [
+        'First-aid training and compass navigation', 
+        'Mastering basic rope knots (e.g., Joining Knot, Clove Hitch)', 
+        'Outdoor Scout trip with hiking and environmental service', 
+        'Hands-on community service projects and team-building games'
+      ] 
+    },
+    { 
+      title: 'Skills & Outcomes', 
+      bullets: [
+        'Enhanced teamwork, discipline, and a strong sense of belonging', 
+        'Self-reliance and readiness in outdoor environments', 
+        'Confidence in leadership, safety, and decision-making', 
+        'Practical trip-planning and survival abilities'
+      ] 
+    }
   ]
 },
 {
@@ -192,8 +208,8 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   title: 'Drama Club',
   src: '/images/boys-4-6/drama_cn.png',
   bg: '#E26D9B',
-  desc: "This 15-class program introduces boys in Grades 4–6 to the fundamentals of drama—voice, movement, character, improvisation, and performance—through progressively challenging rounds. Each round builds directly on the skills of the round before it and ends with a hands-on activity that lets students apply what they've learned in a fun, low-pressure setting. The program culminates in a Final Showcase performed for parents and the school community.",
-  
+  desc: "This program introduces boys in Grades 4–6 to the fundamentals of drama—voice, movement, character, improvisation, and performance—through progressively challenging rounds. Each round builds directly on the skills of the round before it and ends with a hands-on activity that lets students apply what they've learned in a fun, low-pressure setting. The program culminates in a Final Showcase performed for parents and the school community.",
+  banners: ['/images/boys-4-6/drama1.jpeg', '/images/boys-4-6/drama2.jpeg', '/images/boys-4-6/drama3.jpeg'],
   details: [
     { title: 'Skills Gained', bullets: ['Voice projection and clear speech', 'Physical and facial expression of emotion', 'Character creation and embodiment', 'Emotional range and convincing delivery', 'Script reading with expression', 'Stage-blocking vocabulary and technique'] },
     { title: 'Expected Outcome', bullets: ['Comfort and confidence within the group', 'Cooperation during unscripted group activities', 'Ability to stay in character while adapting to the unexpected', 'Successful casting and selection of the final showcase play', 'Confident full performance of the play, in costume, with props and cues, for a live audience'] }
