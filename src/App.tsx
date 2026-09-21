@@ -35,13 +35,13 @@ const globalStyles = `
 const Footer = () => (
   <footer className="w-full bg-white border-t-8 animate-border-color py-3 px-4 sm:px-8 flex justify-between items-center z-50 mt-auto shrink-0">
     <div className="flex items-center gap-3">
-      <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis logo" className="h-10 sm:h-12 w-auto object-contain" />
+      <img src="/images/logo/meis_logo.png" alt="meis logo" className="h-10 sm:h-12 w-auto object-contain" />
       <div className="flex flex-col">
         <span className="font-bold text-[#1c448d] text-sm sm:text-base">MEIS CLUBS</span>
         <span className="text-[10px] sm:text-xs text-gray-400 font-medium">© 2026 All rights reserved</span>
       </div>
     </div>
-    <img src="https://i.ibb.co/60j7zv2f/ataa-preview.png" alt="ataa preview" className="h-10 sm:h-12 w-auto object-contain" />
+    <img src="/images/logo/ataa_logo.png" alt="ataa preview" className="h-10 sm:h-12 w-auto object-contain" />
   </footer>
 );
 
@@ -507,7 +507,7 @@ export default function App() {
         <style>{globalStyles}</style>
         {/* Header */}
         <header className="w-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between z-10 shrink-0">
-          <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-10 sm:h-16 w-auto flex-shrink-0 drop-shadow-sm" />
+          <img src="/images/logo/meis_logo.png" alt="meis" className="h-10 sm:h-16 w-auto flex-shrink-0 drop-shadow-sm" />
           <div className="flex flex-col items-end justify-center ml-4">
              <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap">Middle East International School - AlMuruj</span>
              <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
@@ -517,7 +517,7 @@ export default function App() {
         {/* Main Content */}
         <main className="flex-1 w-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-start sm:justify-center relative z-10 min-h-0">
           <div className="flex flex-col items-center mb-6 sm:mb-12 mt-4 sm:mt-0 shrink-0">
-            <img src="https://i.ibb.co/mV2NWp4v/Clubs.png" alt="Clubs" className="h-20 sm:h-32 md:h-40 mb-2 sm:mb-4 object-contain" />
+            <img src="/images/logo/club_logo.png" alt="Clubs" className="h-20 sm:h-32 md:h-40 mb-2 sm:mb-4 object-contain" />
             <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase">MEIS CLUBS</h1>
           </div>
 
@@ -672,7 +672,7 @@ export default function App() {
               <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <div className="flex flex-nowrap items-center whitespace-nowrap overflow-hidden gap-2 sm:gap-3">
-              <img src="https://i.ibb.co/6cLqW0J6/meis-logo.png" alt="meis" className="h-8 sm:h-12 w-auto hidden sm:block object-contain" />
+              <img src="/images/logo/meis_logo.png" alt="meis" className="h-8 sm:h-12 w-auto hidden sm:block object-contain" />
               <div className="leading-tight text-white hidden sm:block">
                 <p className="text-[12px] sm:text-[14px] font-bold tracking-tight">Middle East International School - AlMuruj</p>
                 <p className="text-[10px] sm:text-[12px] opacity-90 text-left" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</p>
