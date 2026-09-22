@@ -895,7 +895,7 @@ export default function App() {
       <div className="min-h-[100dvh] w-full flex flex-col justify-between relative overflow-y-auto animate-bg-gradient">
         <style>{globalStyles}</style>
         {/* Header */}
-        <header className="w-full px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
+        <header className="w-full px-4 sm:px-8 py-2 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
           <img src="/images/logo/meis_logo.png" alt="meis" className="h-9 sm:h-12 md:h-14 w-auto flex-shrink-0 drop-shadow-sm object-contain" />
           <div className="flex flex-col items-end justify-center ml-4">
              <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-xs md:text-sm whitespace-nowrap">Middle East International School - AlMuruj</span>
@@ -904,14 +904,14 @@ export default function App() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-2 sm:py-4 flex flex-col items-center justify-center relative z-10 my-auto">
-          <div className="flex flex-col items-center justify-center shrink-0 mb-2 sm:mb-3 md:mb-4">
+        <main className="flex-1 w-full max-w-4xl mx-auto px-4 pt-1 sm:pt-4 pb-2 sm:pb-4 flex flex-col items-center justify-start sm:justify-center relative z-10 my-0 sm:my-auto">
+          <div className="flex flex-col items-center justify-center shrink-0 mt-1 sm:mt-0 mb-2 sm:mb-3 md:mb-4">
             <img 
               src="/images/logo/club_logo.png" 
               alt="Clubs" 
-              className="h-14 sm:h-20 md:h-24 lg:h-28 max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain" 
+              className="h-24 sm:h-20 md:h-24 lg:h-28 max-h-[16vh] sm:max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain drop-shadow-sm" 
             />
-            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase leading-none text-center">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold sm:font-bold tracking-wider sm:tracking-widest drop-shadow-sm animate-text-color uppercase leading-none text-center">
               MEIS CLUBS
             </h1>
           </div>
