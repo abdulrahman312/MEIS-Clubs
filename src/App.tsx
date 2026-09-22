@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, ArrowDown, X } from 'lucide-react';
 import { RegistrationPage } from './components/RegistrationPage';
+import { StudentRegistrationForm } from './components/StudentRegistrationForm';
 
 const globalStyles = `
 @keyframes colorCycle {
@@ -682,7 +683,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   ],
 };
 
-type ViewState = 'home' | 'club-view' | 'registration';
+type ViewState = 'home' | 'club-view' | 'registration' | 'registration-form';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -701,6 +702,8 @@ export default function App() {
     const handlePopState = (e: PopStateEvent) => {
       if (fullBannerOpen) {
         setFullBannerOpen(false);
+      } else if (currentView === 'registration-form') {
+        setCurrentView('registration');
       } else if (currentView !== 'home') {
         setCurrentView('home');
       }
@@ -723,12 +726,29 @@ export default function App() {
     setBannerIndex(0);
   }, [activeIndex, selectedCategory]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [currentView]);
+
   const activeCategoryClubs = CLUB_CATEGORIES[selectedCategory] || CLUB_CATEGORIES['Girls (Grade 4 to 6)'];
   const activeClub = activeCategoryClubs[activeIndex];
 
   const openRegistration = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     setCurrentView('registration');
     window.history.pushState({ view: 'registration' }, '', '#registration');
+  };
+
+  const openRegistrationForm = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    setCurrentView('registration-form');
+    window.history.pushState({ view: 'registration-form' }, '', '#student-registration');
   };
 
   const openFullBanner = () => {
@@ -745,6 +765,9 @@ export default function App() {
   };
 
   const handleCategorySelect = (category: string) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     setSelectedCategory(category);
     setActiveIndex(0);
     setCurrentView('club-view');
@@ -752,7 +775,14 @@ export default function App() {
   };
 
   const goHome = () => {
-    if (window.history.state?.view === 'club-view' || window.history.state?.view === 'registration') {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    if (
+      window.history.state?.view === 'club-view' ||
+      window.history.state?.view === 'registration' ||
+      window.history.state?.view === 'registration-form'
+    ) {
       window.history.back();
     } else {
       setCurrentView('home');
@@ -864,6 +894,17 @@ export default function App() {
         onBack={goHome}
         onSelectCategory={(category) => {
           handleCategorySelect(category);
+        }}
+        onOpenRegistrationForm={openRegistrationForm}
+      />
+    );
+  }
+
+  if (currentView === 'registration-form') {
+    return (
+      <StudentRegistrationForm
+        onBack={() => {
+          setCurrentView('registration');
         }}
       />
     );

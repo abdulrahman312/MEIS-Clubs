@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowLeft,
+  ArrowRight,
   ChevronDown,
   ChevronUp,
   Building2,
@@ -28,12 +29,14 @@ import {
   Cpu,
   User,
   CheckCircle2,
-  Layers
+  Layers,
+  ClipboardList
 } from 'lucide-react';
 
 interface RegistrationPageProps {
   onBack: () => void;
   onSelectCategory?: (category: string) => void;
+  onOpenRegistrationForm?: () => void;
 }
 
 // Club icon mapping with matching visual color accents
@@ -201,7 +204,18 @@ const GRADE_SECTIONS: GradeSectionData[] = [
   }
 ];
 
-export const RegistrationPage: React.FC<RegistrationPageProps> = ({ onBack, onSelectCategory }) => {
+export const RegistrationPage: React.FC<RegistrationPageProps> = ({
+  onBack,
+  onSelectCategory,
+  onOpenRegistrationForm
+}) => {
+  // Always scroll to top when RegistrationPage mounts
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   // Dropdown / Accordion state for each grade section (all collapsed by default)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     'girls-1-3': false,
@@ -976,6 +990,68 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ onBack, onSe
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* SECTION 6: STUDENT REGISTRATION ADVISORY NOTE & REGISTRATION BUTTON */}
+        <section className="pt-4 sm:pt-6 border-t-2 border-slate-200">
+          <div className="rounded-3xl bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/40 border-2 border-[#1c448d]/30 p-5 sm:p-8 md:p-10 shadow-lg relative overflow-hidden">
+            {/* Background Decorative Accent */}
+            <div className="absolute top-0 right-0 w-72 h-72 bg-[#1c448d]/5 rounded-full pointer-events-none blur-3xl"></div>
+
+            <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
+              
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-[#1c448d] text-xs font-bold border border-blue-200 shadow-2xs">
+                <ClipboardList className="w-4 h-4 text-[#1c448d]" />
+                <span>Student Club Registration</span>
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  Ready to Register Your Child's Preference?
+                </h2>
+                <div className="h-1 w-20 bg-[#1c448d] mx-auto rounded-full"></div>
+              </div>
+
+              {/* Professional Advisory Note requested by user */}
+              <div className="rounded-2xl bg-amber-50/95 border-2 border-amber-300/80 p-4 sm:p-5 text-left flex items-start gap-3.5 shadow-xs">
+                <div className="p-2 sm:p-2.5 rounded-xl bg-amber-500 text-white shrink-0 mt-0.5 shadow-2xs">
+                  <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="space-y-1.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  <h3 className="font-extrabold text-slate-900 text-sm sm:text-base">
+                    Important Notice for Parents:
+                  </h3>
+                  <p>
+                    Please note that this registration is an <strong>initial preference survey</strong> to help the school gauge student interest and determine the number of students in each club. <strong>This is not the final registration.</strong>
+                  </p>
+                  <p>
+                    Official physical registration forms, including complete club fees, detailed schedules, and final enrollment instructions, will be distributed to students directly in their classrooms by their class supervisors.
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Button to Open Registration Form */}
+              <div className="pt-2 sm:pt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                    onOpenRegistrationForm?.();
+                  }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 rounded-2xl bg-[#1c448d] hover:bg-[#14336c] text-white font-extrabold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  <span>Student Registration</span>
+                  <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+                </button>
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-2.5">
+                  Select grade band, student name, grade, section, and club preference
+                </p>
+              </div>
+
+            </div>
           </div>
         </section>
 
