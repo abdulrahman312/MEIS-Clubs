@@ -137,7 +137,7 @@ const GRADE_SECTIONS: GradeSectionData[] = [
         clubs: ['Recycled Art', 'Sport / Zumba', 'Crochet', 'Cooking']
       }
     ],
-    externalClubs: ['Chess', 'Build It', 'Scout'],
+    externalClubs: ['Chess', 'Build It', 'Scout', 'Robotics'],
     externalRuleNote: 'Choose ONE Package (Rose or Jasmine), OR ONE external club instead.'
   },
   {
@@ -170,12 +170,12 @@ const GRADE_SECTIONS: GradeSectionData[] = [
       {
         name: 'Titan',
         badgeLabel: 'Package 1',
-        clubs: ['Sport', 'BIO VOYAGE', 'Drama — English/Arabic', 'STEM – Nutty Science']
+        clubs: ['Sport/Scout', 'BIO VOYAGE', 'Drama - English', 'STEM – Nutty Science']
       },
       {
         name: 'Atlas',
         badgeLabel: 'Package 2',
-        clubs: ['Sport', 'BIO VOYAGE', 'Drama — English/Arabic', 'STEM – Nutty Science']
+        clubs: ['Sport/Scout', 'BIO VOYAGE', 'Drama - Arabic', 'STEM – Nutty Science']
       }
     ],
     externalClubs: ['Chess', 'Robotics', 'Build It'],
@@ -196,7 +196,7 @@ const GRADE_SECTIONS: GradeSectionData[] = [
         clubs: ['BIO VOYAGE', 'Escape the Room', 'Sport', 'Chemist Kitchen']
       }
     ],
-    externalClubs: ['Chess', 'Build It', 'Scout', 'AI'],
+    externalClubs: ['Chess', 'Build It', 'Scout', 'AI Awareness Club (Grade 9 to 12)'],
     externalRuleNote: 'Choose Package Falcon, OR ONE external club above.'
   }
 ];
@@ -663,8 +663,8 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({ onBack, onSe
                 <Users className="w-4 h-4 text-teal-600" />
                 <h3 className="text-xs sm:text-sm font-bold text-teal-950 uppercase tracking-wide">External Clubs (Specialist Outside Vendors)</h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
-                {['Chess', 'STEM / Robotics', 'Build It'].map((club, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
+                {['Chess', 'STEM / Robotics', 'Build It', 'AI Awareness Club (Grade 9 to 12)'].map((club, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 bg-white rounded-xl border border-teal-100 shadow-2xs">
                     <div className="p-1.5 sm:p-2 bg-teal-50 rounded-lg shrink-0">
                       {getClubIcon(club)}

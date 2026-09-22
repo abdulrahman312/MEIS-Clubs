@@ -34,15 +34,15 @@ const globalStyles = `
 `;
 
 const Footer = () => (
-  <footer className="w-full bg-white border-t-8 animate-border-color py-3 px-4 sm:px-8 flex justify-between items-center z-50 mt-auto shrink-0">
-    <div className="flex items-center gap-3">
-      <img src="/images/logo/meis_logo.png" alt="meis logo" className="h-10 sm:h-12 w-auto object-contain" />
+  <footer className="w-full bg-white border-t-4 sm:border-t-6 md:border-t-8 animate-border-color py-2 sm:py-2.5 md:py-3 px-4 sm:px-8 flex justify-between items-center z-50 mt-auto shrink-0">
+    <div className="flex items-center gap-2.5 sm:gap-3">
+      <img src="/images/logo/meis_logo.png" alt="meis logo" className="h-8 sm:h-10 md:h-11 w-auto object-contain" />
       <div className="flex flex-col">
-        <span className="font-bold text-[#1c448d] text-sm sm:text-base">MEIS CLUBS</span>
-        <span className="text-[10px] sm:text-xs text-gray-400 font-medium">© 2026 All rights reserved</span>
+        <span className="font-bold text-[#1c448d] text-xs sm:text-sm md:text-base">MEIS CLUBS</span>
+        <span className="text-[9px] sm:text-[11px] text-gray-400 font-medium">© 2026 All rights reserved</span>
       </div>
     </div>
-    <img src="/images/logo/ataa_logo.png" alt="ataa preview" className="h-10 sm:h-12 w-auto object-contain" />
+    <img src="/images/logo/ataa_logo.png" alt="ataa preview" className="h-8 sm:h-10 md:h-11 w-auto object-contain" />
   </footer>
 );
 
@@ -403,6 +403,15 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
           
       ]  
 },
+    {   
+      id: 9, title: 'Robotics', src: '/images/girls-4-6/robotics_cn.png', bg: '#2e3ae0',   
+      desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',  
+      banners: ['/images/girls-4-6/ROBOTICS.png'],  
+      details: [  
+        { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] },  
+        { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] }  
+      ]  
+    },  
   ],
   'Boys (Grade 4 to 6)': [
   {
@@ -791,25 +800,31 @@ export default function App() {
 
   if (currentView === 'home') {
     return (
-      <div className="h-[100dvh] w-full flex flex-col relative overflow-hidden animate-bg-gradient">
+      <div className="min-h-[100dvh] w-full flex flex-col justify-between relative overflow-y-auto animate-bg-gradient">
         <style>{globalStyles}</style>
         {/* Header */}
-        <header className="w-full px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between z-10 shrink-0">
-          <img src="/images/logo/meis_logo.png" alt="meis" className="h-10 sm:h-16 w-auto flex-shrink-0 drop-shadow-sm" />
+        <header className="w-full px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
+          <img src="/images/logo/meis_logo.png" alt="meis" className="h-9 sm:h-12 md:h-14 w-auto flex-shrink-0 drop-shadow-sm object-contain" />
           <div className="flex flex-col items-end justify-center ml-4">
-             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap">Middle East International School - AlMuruj</span>
-             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-[14px] md:text-base whitespace-nowrap" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
+             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-xs md:text-sm whitespace-nowrap">Middle East International School - AlMuruj</span>
+             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-xs md:text-sm whitespace-nowrap" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-5xl mx-auto px-4 flex flex-col items-center justify-start sm:justify-center relative z-10 min-h-0">
-          <div className="flex flex-col items-center mb-6 sm:mb-12 mt-4 sm:mt-0 shrink-0">
-            <img src="/images/logo/club_logo.png" alt="Clubs" className="h-20 sm:h-32 md:h-40 mb-2 sm:mb-4 object-contain" />
-            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase">MEIS CLUBS</h1>
+        <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-2 sm:py-4 flex flex-col items-center justify-center relative z-10 my-auto">
+          <div className="flex flex-col items-center justify-center shrink-0 mb-2 sm:mb-3 md:mb-4">
+            <img 
+              src="/images/logo/club_logo.png" 
+              alt="Clubs" 
+              className="h-14 sm:h-20 md:h-24 lg:h-28 max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain" 
+            />
+            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold tracking-widest drop-shadow-sm animate-text-color uppercase leading-none text-center">
+              MEIS CLUBS
+            </h1>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 w-full max-w-3xl flex-1 sm:flex-none overflow-y-auto sm:overflow-visible pb-4 sm:pb-0 hide-scrollbar">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5 md:gap-4 w-full max-w-2xl lg:max-w-3xl shrink-0">
             {[
               { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6'},
               { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922' },
@@ -819,9 +834,8 @@ export default function App() {
             ].map((btn) => (
               <button
                 key={btn.id}
-                
                 onClick={() => handleCategorySelect(btn.label)}
-                className="font-display text-lg sm:text-xl md:text-2xl py-4 sm:py-8 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/60 backdrop-blur-sm transform transition-all duration-300 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-sm hover:shadow-md min-h-[60px]"
+                className="font-display text-base sm:text-lg md:text-xl py-2.5 sm:py-3.5 md:py-4 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/70 backdrop-blur-sm transform transition-all duration-200 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-xs hover:shadow-md min-h-[48px] sm:min-h-[54px] md:min-h-[60px]"
                 style={{ borderColor: btn.color, color: btn.color }}
               >
                 {btn.label}
@@ -829,10 +843,10 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-auto pt-4 pb-6 w-full max-w-3xl flex justify-center shrink-0">
+          <div className="mt-3 sm:mt-4 md:mt-5 mb-1 w-full max-w-3xl flex justify-center shrink-0">
             <button 
               onClick={openRegistration}
-              className="px-8 py-3 bg-[#1c448d] hover:bg-[#14336c] text-white rounded-full font-bold uppercase tracking-wider shadow-lg transition-transform hover:scale-105 active:scale-95"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#1c448d] hover:bg-[#14336c] text-white rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
               Registration Details
             </button>
