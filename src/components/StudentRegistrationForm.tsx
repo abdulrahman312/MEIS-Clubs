@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowLeft,
+  ArrowRight,
   User,
   Check,
   Send,
@@ -18,6 +19,7 @@ import { getClubIcon } from './RegistrationPage';
 
 interface StudentRegistrationFormProps {
   onBack: () => void;
+  onGoToDetails?: () => void;
   initialGradeSectionId?: string;
 }
 
@@ -29,6 +31,7 @@ const LOCAL_STORAGE_KEY_SUBMISSIONS = 'meis_club_submissions_log';
 
 export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = ({
   onBack,
+  onGoToDetails,
   initialGradeSectionId = 'girls-1-3'
 }) => {
   // Find initial section or default to first
@@ -226,6 +229,40 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
       {/* Main Container */}
       <main className="flex-1 max-w-3xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-8 space-y-5 sm:space-y-6">
         
+        {/* Notice to Read Registration Details First */}
+        <section className="rounded-2xl bg-amber-50/95 border-2 border-amber-300 p-3.5 sm:p-5 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4">
+          <div className="flex items-start gap-3 min-w-0">
+            <div className="p-2 sm:p-2.5 bg-amber-500 text-white rounded-xl shadow-2xs shrink-0 mt-0.5 sm:mt-0">
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+            </div>
+            <div className="space-y-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-md bg-amber-200 text-amber-900 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider">
+                  Important Notice
+                </span>
+              </div>
+              <h2 className="text-xs sm:text-sm md:text-base font-extrabold text-amber-950 leading-snug">
+                Please Read the Registration Details for Clubs
+              </h2>
+              <p className="text-[11px] sm:text-xs text-amber-900 leading-relaxed">
+                Make sure you have carefully reviewed the <strong>Registration Details for Clubs</strong> to understand the available internal packages, external club options, and schedules before completing your registration.
+              </p>
+            </div>
+          </div>
+
+          {onGoToDetails && (
+            <button
+              type="button"
+              onClick={onGoToDetails}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs sm:text-sm shadow-xs hover:shadow transition-all shrink-0 active:scale-95 cursor-pointer whitespace-nowrap"
+            >
+              <BookOpen className="w-4 h-4 shrink-0" />
+              <span>Registration Details</span>
+              <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+            </button>
+          )}
+        </section>
+
         {/* Important Parent Advisory Notice */}
         <section className="rounded-2xl bg-gradient-to-br from-blue-50/90 via-indigo-50/50 to-white border border-blue-200 p-3.5 sm:p-5 shadow-xs">
           <div className="flex items-start gap-3 sm:gap-3.5">

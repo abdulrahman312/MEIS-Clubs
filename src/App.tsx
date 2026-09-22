@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, ArrowRight, ArrowDown, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowDown, X, BookOpen, ClipboardList } from 'lucide-react';
 import { RegistrationPage } from './components/RegistrationPage';
 import { StudentRegistrationForm } from './components/StudentRegistrationForm';
 
@@ -747,6 +747,7 @@ type ViewState = 'home' | 'club-view' | 'registration' | 'registration-form';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<ViewState>('home');
+  const [registrationReturnView, setRegistrationReturnView] = useState<'home' | 'registration'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('Girls (Grade 4 to 6)');
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -763,7 +764,7 @@ export default function App() {
       if (fullBannerOpen) {
         setFullBannerOpen(false);
       } else if (currentView === 'registration-form') {
-        setCurrentView('registration');
+        setCurrentView(registrationReturnView);
       } else if (currentView !== 'home') {
         setCurrentView('home');
       }
@@ -771,7 +772,7 @@ export default function App() {
     
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [currentView, fullBannerOpen]);
+  }, [currentView, fullBannerOpen, registrationReturnView]);
   
   useEffect(() => {
     const handleResize = () => {
@@ -803,10 +804,11 @@ export default function App() {
     window.history.pushState({ view: 'registration' }, '', '#registration');
   };
 
-  const openRegistrationForm = () => {
+  const openRegistrationForm = (from: 'home' | 'registration' = 'home') => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
+    setRegistrationReturnView(from);
     setCurrentView('registration-form');
     window.history.pushState({ view: 'registration-form' }, '', '#student-registration');
   };
@@ -933,12 +935,20 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-3 sm:mt-4 md:mt-5 mb-1 w-full max-w-3xl flex justify-center shrink-0">
+          <div className="mt-3 sm:mt-4 md:mt-5 mb-1 w-full max-w-2xl lg:max-w-3xl flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 shrink-0">
             <button 
               onClick={openRegistration}
-              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#1c448d] hover:bg-[#14336c] text-white rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-transform hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3.5 bg-white hover:bg-slate-50 text-[#1c448d] border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
             >
-              Registration Details
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-[#1c448d]" />
+              <span>Registration Details</span>
+            </button>
+            <button 
+              onClick={() => openRegistrationForm('home')}
+              className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3.5 bg-[#1c448d] hover:bg-[#14336c] text-white border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <ClipboardList className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <span>Student Registration</span>
             </button>
           </div>
         </main>
@@ -955,7 +965,7 @@ export default function App() {
         onSelectCategory={(category) => {
           handleCategorySelect(category);
         }}
-        onOpenRegistrationForm={openRegistrationForm}
+        onOpenRegistrationForm={() => openRegistrationForm('registration')}
       />
     );
   }
@@ -964,8 +974,12 @@ export default function App() {
     return (
       <StudentRegistrationForm
         onBack={() => {
-          setCurrentView('registration');
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          setCurrentView(registrationReturnView);
         }}
+        onGoToDetails={openRegistration}
       />
     );
   }
