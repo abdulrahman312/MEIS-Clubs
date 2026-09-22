@@ -508,7 +508,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
                 <div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900">External Clubs</h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1">
-                    During regular school hours, as an individually selected specialist club (replaces the grade package for that period).
+                    During regular school hours, as an individually selected external club (replaces the grade package for that period).
                   </p>
                 </div>
               </div>
@@ -675,7 +675,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
             <div className="p-4 sm:p-5 rounded-2xl bg-teal-50/50 border border-teal-200">
               <div className="flex items-center gap-2 mb-3">
                 <Users className="w-4 h-4 text-teal-600" />
-                <h3 className="text-xs sm:text-sm font-bold text-teal-950 uppercase tracking-wide">External Clubs (Specialist Outside Vendors)</h3>
+                <h3 className="text-xs sm:text-sm font-bold text-teal-950 uppercase tracking-wide">External Clubs</h3>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
                 {['Chess', 'STEM / Robotics', 'Build It', 'AI Awareness Club (Grade 9 to 12)'].map((club, idx) => (
@@ -958,7 +958,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
                                 Prefer an External Club instead?
                               </h4>
                               <p className="text-[11px] sm:text-xs text-slate-600">
-                                You can choose ONE specialist external activity instead of the package:
+                                You can choose ONE external club instead of the package:
                               </p>
                             </div>
                           </div>

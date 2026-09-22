@@ -225,7 +225,37 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] }   
       ]  
-    }   
+    },
+    {
+  id: 8,
+  title: 'CHESS', 
+  src: '/images/girls-7-12/chess_cn.png',
+  bg: '#ec6458',
+  desc: ' An engaging and structured 8-week chess program designed to develop chess skills, strategic thinking, concentration, problem-solving, and confidence through interactive learning and practical play',
+  banners: ['/images/girls-7-12/chess1.png', '/images/girls-7-12/chess2.png'],
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+      'Strategic Thinking',
+        'Focus & Concentration',
+        'Problem-Solving',
+        'Sportsmanship',
+        'Tactical & Positional Play',
+        'Time Management & Rules Mastery'
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets:[
+        'Confidence & Competition',
+        'Structured Journey Completion',
+        'Championship Participation',
+        'Recognition'
+      ] 
+    }
+  ]
+},   
 
   ],
   'Girls (Grade 7 to 12)': [
@@ -531,7 +561,37 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       ] 
     }
   ]
-}
+},
+{
+  id: 8,
+  title: 'CHESS', 
+  src: '/images/girls-7-12/chess_cn.png',
+  bg: '#ec6458',
+  desc: ' An engaging and structured 8-week chess program designed to develop chess skills, strategic thinking, concentration, problem-solving, and confidence through interactive learning and practical play',
+  banners: ['/images/girls-7-12/chess1.png', '/images/girls-7-12/chess2.png'],
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+      'Strategic Thinking',
+        'Focus & Concentration',
+        'Problem-Solving',
+        'Sportsmanship',
+        'Tactical & Positional Play',
+        'Time Management & Rules Mastery'
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets:[
+        'Confidence & Competition',
+        'Structured Journey Completion',
+        'Championship Participation',
+        'Recognition'
+      ] 
+    }
+  ]
+},
   ],
   'Boys (Grade 7 to 12)': [
 {

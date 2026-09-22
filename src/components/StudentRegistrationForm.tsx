@@ -601,12 +601,12 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
                   </div>
                 )}
 
-                {/* 2. Specialist External Clubs Option */}
+                {/* 2. External Clubs Option */}
                 {currentSectionData.externalClubs.length > 0 && (
                   <div className="space-y-2 pt-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-800 bg-teal-100/90 px-2 py-0.5 rounded-md">
-                        Specialist External Clubs
+                      <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-teal-800 bg-teal-100/90 px-2.5 py-0.5 rounded-md">
+                        External Clubs
                       </span>
                     </div>
 
@@ -634,9 +634,6 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
                                 {getClubIcon(extClub)}
                               </div>
                               <div className="min-w-0">
-                                <span className="text-[9px] font-bold uppercase text-teal-700 block">
-                                  External Club
-                                </span>
                                 <h4 className="font-bold text-xs sm:text-sm text-slate-900 leading-snug truncate">
                                   {extClub}
                                 </h4>
