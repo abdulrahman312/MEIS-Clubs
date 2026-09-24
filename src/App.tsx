@@ -472,6 +472,36 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         ,{title: 'Club Type', content: 'External'}
       ]  
     },  
+    {
+  id: 9,
+  title: "Robotics Club",
+  src: '/images/boys-4-6/robotics_cn.png',
+  bg: '#319795',
+  desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',
+  banners: ['/images/boys-4-6/Tomorrow Code.png'],
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+        'Problem-Solving & Algorithmic Thinking', 
+        'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 
+        'Block-Based Coding & Logic Design', 
+        'Teamwork, Collaboration, & Communication', 
+        'Creative Thinking & Innovation'
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets: [
+        'Ability to design, build, and program functional robotic and mechanical models.', 
+        'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 
+        'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 
+        'Completion of practical STEM projects ready for presentation and competition.'
+      ] 
+    }
+    ,{title: 'Club Type', content: 'External'}
+  ]
+},
   ],
   'Boys (Grade 4 to 6)': [
   {
@@ -827,6 +857,36 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Work effectively as part of a team and communicate respectfully with others.',
         'Demonstrate discipline, responsibility, and commitment.',
         'Take initiative and participate actively in school and community activities.'
+      ] 
+    }
+    ,{title: 'Club Type', content: 'External'}
+  ]
+},
+{
+  id: 6,
+  title: "Robotics Club",
+  src: '/images/boys-4-6/robotics_cn.png',
+  bg: '#319795',
+  desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',
+  banners: ['/images/boys-4-6/Tomorrow Code.png'],
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+        'Problem-Solving & Algorithmic Thinking', 
+        'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 
+        'Block-Based Coding & Logic Design', 
+        'Teamwork, Collaboration, & Communication', 
+        'Creative Thinking & Innovation'
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets: [
+        'Ability to design, build, and program functional robotic and mechanical models.', 
+        'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 
+        'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 
+        'Completion of practical STEM projects ready for presentation and competition.'
       ] 
     }
     ,{title: 'Club Type', content: 'External'}
