@@ -1023,10 +1023,10 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
                     Important Notice for Parents:
                   </h3>
                   <p>
-                    Please note that this registration is an <strong>initial preference survey</strong> to help the school gauge student interest and determine the number of students in each club. <strong>This is not the final registration.</strong>
+                    Please note that this registration is an <strong>initial preference survey</strong> to help the school check student interest and determine the number of students in each club. <strong>This is not the final registration.</strong>
                   </p>
                   <p>
-                    Official physical registration forms, including complete club fees, detailed schedules, and final enrollment instructions, will be distributed to students directly in their classrooms by their class supervisors.
+                    Official physical registration forms, including complete club fees, detailed schedules, and final enrollment instructions, will be distributed to students directly in their classrooms by their floor supervisors.
                   </p>
                 </div>
               </div>

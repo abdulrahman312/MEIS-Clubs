@@ -282,7 +282,7 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
                 Student Club Preference Survey
               </h1>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                This online form is intended strictly to gauge student interest and estimate club sizes. <strong>This is not the final registration.</strong> Official physical registration forms with complete pricing and schedule details will be distributed directly to students in their classrooms by their class supervisors.
+                This online form is intended strictly to check student interest and estimate club sizes. <strong>This is not the final registration.</strong> Official physical registration forms with complete pricing and schedule details will be distributed directly to students in their classrooms by their floor supervisors.
               </p>
             </div>
           </div>
