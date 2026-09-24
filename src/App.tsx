@@ -114,7 +114,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {  
       id: 2, title: 'BUILD-IT', src: '/images/grades-1-3/buildit_cn.png', bg: '#FFA502',  
       desc: 'The Build It Club is a STEM club for Grades 1, 2, and 3. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.', 
-      banners: ['/images/grades-1-3/BUILD-IT(1).jpeg', '/images/grades-1-3/BUILD-IT(2).jpeg'], 
+      banners: ['/images/grades-1-3/BUILD-IT(1).jpeg', '/images/grades-1-3/BUILD-IT(2).jpeg', '/images/grades-1-3/buildit22.jpeg'], 
       details: [ 
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
@@ -186,7 +186,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 3, title: 'Crochet', src: '/images/girls-4-6/crochet_cn.png', bg: '#667EEA',   
       desc: 'The Crochet Club is a fun and creative space where students can learn the art of crochet, develop new skills, and express their creativity through hands-on projects.\n\nProgram 1 – Grades 4–6:\nStudents will learn the basic crochet skills, including how to hold the hook and yarn, make simple stitches, and create small, colorful projects. The program focuses on creativity, patience, and confidence in a fun and supportive environment.\n\nProgram 2 – Grades 7–9:\nStudents will build on basic crochet techniques and explore more advanced stitches, patterns, and creative designs. They will work on larger and more detailed projects while developing independence, concentration, and artistic expression.',  
-      banners: ['/images/girls-4-6/CROCHET.png'],  
+      banners: ['/images/girls-4-6/CROCHET.png', '/images/girls-4-6/CROCHET1.png'],  
       details: [  
         { title: 'Skills Gained', content: 'Bu the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
@@ -196,7 +196,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 4, title: 'Gardening', src: '/images/girls-4-6/gardening_cn.png', bg: '#7B9E46',   
       desc: 'A simple hands-on gardening activity where students decorate pots and plant sprouts to learn care and teamwork ',  
-      banners: ['/images/girls-4-6/GARDENING.jpeg'],  
+      banners: ['/images/girls-4-6/GARDENING.jpeg', '/images/girls-4-6/garden1.jpeg', '/images/girls-4-6/garden2.jpeg', '/images/girls-4-6/garden3.jpeg'],  
       details: [  
         { title: 'Skills Gained', content: 'Responsibility & care, Hands-on inquiry skills, Teamwork & collaboration, following steps & Procedures' },  
         { title: 'Expected Outcome', content: 'Students follow simple planting steps, students show responsibility, students express creativity ' }  
@@ -226,7 +226,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 7, title: 'BUILD IT', src: '/images/girls-4-6/buildit_cn.png', bg: '#1da7e7',   
       desc: 'The Build It Club is a STEM club for Grades 4-6. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.',  
-      banners: ['/images/girls-4-6/BUILD-IT(2).jpeg'],  
+      banners: ['/images/girls-4-6/BUILD-IT(2).jpeg', '/images/girls-4-6/buildit11.jpeg'],  
       details: [  
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] }   
@@ -264,6 +264,21 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     ,{title: 'Club Type', content: 'External'}
   ]
 },   
+{
+  id: 9,
+  title: 'ART-CLUB',
+  src: '/images/girls-7-12/art_cn.png',
+  bg: '#5D9C59',
+  desc: 'A fun club where students explore drawing, painting, coloring, crafts, and creative art projects.',
+  banners: ['/images/girls-7-12/ART-CLUB.png', '/images/girls-4-6/art1.jpeg'],
+  
+  details:
+       [ 
+        { title: 'Skills Gained', content: 'Creativity,imagination, focus, and artistic expression.' }, 
+        { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' } 
+         ,{title: 'Club Type', content: 'Internal'}
+      ] 
+},
 
   ],
   'Girls (Grade 7 to 12)': [
@@ -304,7 +319,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/art_cn.png',
   bg: '#5D9C59',
   desc: 'A fun club where students explore drawing, painting, coloring, crafts, and creative art projects.',
-  banners: ['/images/girls-7-12/ART-CLUB.png'],
+  banners: ['/images/girls-7-12/ART-CLUB.png', '/images/girls-4-6/art1.jpeg'],
   
   details:
        [ 
@@ -361,7 +376,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/scout_cn.png',
   bg: '#4285F4',
   desc: 'The MEIS Scout Team is a student development program designed to build leadership, character, teamwork, discipline, and practical life skills through hands-on scouting activities.',
-  banners: ['/images/girls-7-12/SCOUT.jpg'],
+  banners: ['/images/girls-7-12/SCOUT.jpg', '/images/girls-7-12/scout1.jpeg'],
   details: [
     { 
       title: 'Skills Gained', 
@@ -396,7 +411,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   title: 'Recycled ART',
   src: '/images/girls-7-12/recycled.png',
   bg: '#9C27B0',
-  banners: ['/images/girls-7-12/Recycled.png'],
+  banners: ['/images/girls-7-12/Recycled.png', '/images/girls-7-12/recycle1.jpg', '/images/girls-7-12/recycle2.jpg', '/images/girls-7-12/recycle3.jpg'],
   desc: 'Recycled Art is a creative hands-on club where students transform everyday discarded materials into unique, eco-friendly artwork. By repurposing items like plastic, paper, and packaging, students explore artistic expression while learning the principles of sustainability and environmental responsibility.',
   details: [
     { 
@@ -427,7 +442,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/buildit_cn.png',
   bg: '#4285F4',
   desc: 'The Build It Club is a STEM club for Grades 7-12. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.',
-  banners: ['/images/girls-7-12/BUILD-IT(2).jpeg'],
+  banners: ['/images/girls-7-12/BUILD-IT(2).jpeg', '/images/girls-7-12/buildit33.jpeg'],
   details: [ 
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
@@ -440,7 +455,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/crochet_cn.png',
   bg: '#D946A9',
   desc: 'The Crochet Club is a fun and creative space where students can learn the art of crochet, develop new skills, and express their creativity through hands-on projects.\n\nProgram 1 – Grades 4–6:\nStudents will learn the basic crochet skills, including how to hold the hook and yarn, make simple stitches, and create small, colorful projects. The program focuses on creativity, patience, and confidence in a fun and supportive environment.\n\nProgram 2 – Grades 7–9:\nStudents will build on basic crochet techniques and explore more advanced stitches, patterns, and creative designs. They will work on larger and more detailed projects while developing independence, concentration, and artistic expression.',
-  banners: ['/images/girls-7-12/CROCHET.png'],
+  banners: ['/images/girls-7-12/CROCHET.png', '/images/girls-4-6/CROCHET1.png'],
   details: [  
         { title: 'Skills Gained', content: 'By the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
@@ -529,11 +544,11 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 },
 {
   id: 5,
-  title: 'Bildits STEAM Construction Workshop by SAMACO',
+  title: 'Build It STEAM Construction Workshop by SAMACO',
   src: '/images/boys-4-6/bildits_cn.png',
   bg: '#E5A038',
   desc: 'Real Construction Experience.',
-  banners: ['/images/boys-4-6/smaco1.jpg', '/images/boys-4-6/samaco2.jpg'],
+  banners: ['/images/boys-4-6/smaco1.jpg', '/images/boys-4-6/samaco2.jpg', '/images/boys-4-6/buildit44.jpeg', '/images/boys-4-6/buildit55.jpeg'],
   details: [
     { title: 'Skills Gained', bullets: ['21st-century skills', 'Fine motor skills', 'Planning', 'Patience', 'Communication', 'Responsibility'] },
     { title: 'Expected Outcome', content: 'Students will be able to face challenges, solve problems, think critically, set up goals, and plan to achieve them.' }
@@ -781,6 +796,43 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
          ,{title: 'Club Type', content: 'External'}
       ] 
 },
+{
+  id: 5,
+  title: 'Scout',
+  src: '/images/girls-7-12/scout_cn.png',
+  bg: '#4285F4',
+  desc: 'The MEIS Scout Team is a student development program designed to build leadership, character, teamwork, discipline, and practical life skills through hands-on scouting activities.',
+  banners: ['/images/girls-7-12/SCOUT.jpg', '/images/girls-7-12/scout1.jpeg'],
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+        'Leadership and decision-making skills',
+        'Teamwork and effective communication',
+        'Problem-solving and critical-thinking skills',
+        'Self-discipline and responsibility',
+        'First aid and basic emergency-response skills',
+        'Navigation, map-reading, and outdoor skills',
+        'Time management and organization',
+        'Confidence, independence, and resilience',
+        'Community service and volunteering skills',
+        'Respect, cooperation, and positive citizenship'
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets: [
+        'Demonstrate greater confidence, leadership, and independence.',
+        'Apply practical skills in real-life and emergency situations.',
+        'Work effectively as part of a team and communicate respectfully with others.',
+        'Demonstrate discipline, responsibility, and commitment.',
+        'Take initiative and participate actively in school and community activities.'
+      ] 
+    }
+    ,{title: 'Club Type', content: 'External'}
+  ]
+},
+
   ],
 };
 
