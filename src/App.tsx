@@ -536,7 +536,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 {
   id: 2,
   title: 'نادي مدار',
-  src: '/images/boys-4-6/madar_cn.png',
+  src: '/images/boys-4-6/arabicdrama_cn.png',
   bg: '#48BB78',
   desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
   banners: ['/images/boys-4-6/madar.jpeg'],
