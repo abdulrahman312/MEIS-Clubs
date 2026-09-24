@@ -107,8 +107,8 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       banners: ['/images/grades-1-3/ART.png'], 
       details: [ 
         { title: 'Skills Gained', content: 'Creativity,imagination, focus, and artistic expression.' }, 
-        { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' } 
-         
+        { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' }, 
+         {title: 'Club Type', content: 'Internal'}
       ] 
     }, 
     {  
@@ -118,7 +118,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [ 
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
-         
+         ,{title: 'Club Type', content: 'External'}
       ] 
     }, 
     {  
@@ -128,7 +128,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [ 
         { title: 'Skills Gained', content: 'Cooking basics, teamwork, creativity, hygiene, and following instructions.' }, 
         { title: 'Expected Outcome', content: 'Students will safely prepare simple recipes, work as a team, and gain confidence in the kitchen.' } 
-         
+         ,{title: 'Club Type', content: 'Internal'}
       ] 
     }, 
     {  
@@ -138,6 +138,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [ 
         { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] }, 
         { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] } 
+        ,{title: 'Club Type', content: 'External'}
       ] 
     }, 
     {  
@@ -147,6 +148,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [ 
         { title: 'Skills Gained', content: 'Teamwork, coordination, discipline, confidence, and fitness' }, 
         { title: 'Expected Outcome', content: 'Students will improve physical skills, follow rules, work in teams, and develop good sportsmanship.' } 
+        ,{title: 'Club Type', content: 'Internal'}
       ] 
     }, 
     {  
@@ -156,6 +158,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [ 
         { title: 'Skills Gained', content: 'Problem-solving, creativity, teamwork, critical thinking, and observation.' }, 
         { title: 'Expected Outcome', content: 'Students will enjoy STEM learning, build simple projects, solve challenges, and work confidently in teams.' } 
+        ,{title: 'Club Type', content: 'Internal'}
       ] 
     } 
  ],
@@ -167,7 +170,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', content: 'Developing hand skills,Precision & Focus, Fine motor activity, Fostering Curiosity' },  
         { title: 'Expected Outcome', content: 'Building Patience, Teamwork, Inspiring Future Careers' }  
-          
+         ,{title: 'Club Type', content: 'Internal'} 
       ]  
     },  
     {   
@@ -177,7 +180,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', bullets: ['Teamwork and collaboration', 'Communication skills', 'Time management', 'Following instructions and recipes'] },  
         { title: 'Expected Outcome', bullets: ['Students gained basic cooking and food-preparation skills.', 'Students learned to follow recipes and instructions accurately.', 'Students developed teamwork and communication skills.'] }  
-          
+          ,{title: 'Club Type', content: 'Internal'}
       ]  
     },  
     {   
@@ -187,7 +190,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', content: 'Bu the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
-          
+          ,{title: 'Club Type', content: 'Internal'}
       ]  
     },  
     {   
@@ -197,6 +200,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', content: 'Responsibility & care, Hands-on inquiry skills, Teamwork & collaboration, following steps & Procedures' },  
         { title: 'Expected Outcome', content: 'Students follow simple planting steps, students show responsibility, students express creativity ' }  
+        ,{title: 'Club Type', content: 'Internal'}
       ]  
     },  
     {   
@@ -206,6 +210,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] },  
         { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] }  
+      ,{title: 'Club Type', content: 'External'}
       ]  
     },  
     {   
@@ -215,6 +220,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', content: 'Athletic agility, teamwork, strategic sportsmanship, and physical endurance.' },  
         { title: 'Expected Outcome', content: 'Improved physical health, strong sportsmanship, enhanced teamwork abilities, and confidence in competitive play.' }  
+      ,{title: 'Club Type', content: 'Internal'}
       ]  
     },
     {   
@@ -224,6 +230,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] }   
+      ,{title: 'Club Type', content: 'External'}
       ]  
     },
     {
@@ -254,6 +261,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Recognition'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },   
 
@@ -287,6 +295,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Recognition'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },
 {
@@ -301,7 +310,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
        [ 
         { title: 'Skills Gained', content: 'Creativity,imagination, focus, and artistic expression.' }, 
         { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' } 
-         
+         ,{title: 'Club Type', content: 'Internal'}
       ] 
 },
 {
@@ -327,6 +336,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       title: 'Expected Outcome', 
       content: 'Improved physical health, positive mood, self-confidence, stronger friendships, and a greater enjoyment of sport and movement.' 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -342,6 +352,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   [ 
    { title: 'Skills Gained', content: 'Cooking basics, teamwork, creativity, hygiene, and following instructions.' }, 
    { title: 'Expected Outcome', content: 'Students will safely prepare simple recipes, work as a team, and gain confidence in the kitchen.' } 
+    ,{title: 'Club Type', content: 'Internal'}
   ] 
 },
 {
@@ -377,6 +388,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Take initiative and participate actively in school and community activities.'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },
 {
@@ -406,6 +418,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         
       ] 
     },
+    {title: 'Club Type', content: 'Internal'}
   ]
 },
  {
@@ -418,7 +431,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [ 
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
-         
+         ,{title: 'Club Type', content: 'External'}
       ] 
 },
 {
@@ -431,7 +444,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [  
         { title: 'Skills Gained', content: 'By the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
-          
+          ,{title: 'Club Type', content: 'Internal'}
       ]  
 },
     {   
@@ -441,16 +454,17 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       details: [  
         { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] },  
         { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] }  
+        ,{title: 'Club Type', content: 'External'}
       ]  
     },  
   ],
   'Boys (Grade 4 to 6)': [
   {
   id: 1,
-  title: 'Scouting Club',
+  title: 'Scouting Club/Sports',
   src: '/images/boys-4-6/scout_cn.png',
   bg: '#EA7655',
-  desc: 'A four-week adventure that builds self-reliance, leadership, and teamwork. Members explore nature, learn essential survival skills, and participate in an immersive outdoor Scout trip and community service project.',
+  desc: 'An adventure that builds self-reliance, leadership, and teamwork. Members explore nature, learn essential survival skills, and participate in an immersive outdoor Scout trip and community service project.',
   banners: ['/images/boys-4-6/scout.jpg'],
   details: [
     { 
@@ -471,6 +485,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Practical trip-planning and survival abilities'
       ] 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -483,6 +498,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [
     { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
     { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -495,6 +511,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [
     { title: 'Skills Gained', bullets: ['Voice projection and clear speech', 'Physical and facial expression of emotion', 'Character creation and embodiment', 'Emotional range and convincing delivery', 'Script reading with expression', 'Stage-blocking vocabulary and technique'] },
     { title: 'Expected Outcome', bullets: ['Comfort and confidence within the group', 'Cooperation during unscripted group activities', 'Ability to stay in character while adapting to the unexpected', 'Successful casting and selection of the final showcase play', 'Confident full performance of the play, in costume, with props and cues, for a live audience'] }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -507,6 +524,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [
     { title: 'Skills Gained', bullets: ['Creativity & Innovation', 'Tech & Engineering', 'Coding & Programming', 'Problem-Solving & Critical Thinking', 'Design & Building Skills', 'Teamwork & Collaboration', 'Communication & Project Skills', 'Confidence & Hands-on Learning'] },
     { title: 'Expected Outcome', content: 'Create, Code, Solve, and Innovate. Students will develop creativity, coding, problem-solving, teamwork, and hands-on STEM skills through exciting real-world projects.' }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -519,6 +537,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [
     { title: 'Skills Gained', bullets: ['21st-century skills', 'Fine motor skills', 'Planning', 'Patience', 'Communication', 'Responsibility'] },
     { title: 'Expected Outcome', content: 'Students will be able to face challenges, solve problems, think critically, set up goals, and plan to achieve them.' }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },
 {
@@ -531,6 +550,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   details: [
     { title: 'Skills Gained', bullets: ['Respect for living organisms', 'Leadership', 'Connecting theory with practice', 'Curiosity', 'Teamwork'] },
     { title: 'Expected Outcome', content: 'Prepare students for future careers.' }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -560,6 +580,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Completion of practical STEM projects ready for presentation and competition.'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },
 {
@@ -590,6 +611,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Recognition'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
 },
   ],
@@ -610,6 +632,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       title: 'Expected Outcome', 
       content: 'Understand the body and inspire the future.' 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
  {
@@ -642,6 +665,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Build & Deploy Real-World Apps: Progress from basic prompting to designing, developing, and launching functional AI-powered web applications.'
       ] 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 
@@ -661,6 +685,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       title: 'Expected Outcome', 
       content: 'Teach students to "show" rather than to "tell".' 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -690,6 +715,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       title: 'Expected Outcome', 
       content: 'Students will develop stronger problem-solving and critical-thinking skills while learning to work effectively as a team. They will improve their communication, creativity, logical reasoning, decision-making, and digital skills through hands-on challenges. By the end of the club, students will be able to approach problems creatively, collaborate with others, analyze clues and information, and apply different strategies to successfully complete challenges.' 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -708,6 +734,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       title: 'Expected Outcome', 
       content: 'التعريف بشعراء العصور الأدبية.' 
     }
+    ,{title: 'Club Type', content: 'Internal'}
   ]
 },
 {
@@ -738,7 +765,21 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         'Recognition'
       ] 
     }
+    ,{title: 'Club Type', content: 'External'}
   ]
+},
+ {
+  id: 7,
+  title: 'Build It',
+  src: '/images/girls-7-12/buildit_cn.png',
+  bg: '#4285F4',
+  desc: 'The Build It Club is a STEM club for Grades 7-12. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.',
+  banners: ['/images/girls-7-12/BUILD-IT(2).jpeg'],
+  details: [ 
+        { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
+        { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
+         ,{title: 'Club Type', content: 'External'}
+      ] 
 },
   ],
 };
@@ -1203,7 +1244,14 @@ export default function App() {
           </div>
 
           {activeClub.banners && activeClub.banners.length > 0 && (
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-5 sm:gap-6 pt-2">
+              <h3 
+                className="font-display text-3xl sm:text-5xl uppercase tracking-wide text-center leading-none"
+                style={{ color: activeClub.bg, transition: 'color 650ms ease' }}
+              >
+                CLUB Poster
+              </h3>
+
               <div className="flex items-center gap-4">
                 {activeClub.banners.length > 1 && (
                   <button 
@@ -1287,9 +1335,11 @@ export default function App() {
                   e.stopPropagation();
                   setBannerIndex(prev => (prev - 1 + activeClub.banners!.length) % activeClub.banners!.length);
                 }}
-                className="absolute left-2 sm:left-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-md transition-transform hover:scale-110 active:scale-95 z-[210]"
+                className="absolute left-2 sm:left-8 p-3 sm:p-4 rounded-full text-white shadow-2xl transition-all hover:scale-110 active:scale-95 z-[210] hover:brightness-110 flex items-center justify-center cursor-pointer border border-white/20"
+                style={{ backgroundColor: activeClub.bg }}
+                aria-label="Previous"
               >
-                <ArrowLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+                <ArrowLeft className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={2.5} />
               </button>
             )}
             
@@ -1330,9 +1380,11 @@ export default function App() {
                   e.stopPropagation();
                   setBannerIndex(prev => (prev + 1) % activeClub.banners!.length);
                 }}
-                className="absolute right-2 sm:right-8 p-3 sm:p-4 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-md transition-transform hover:scale-110 active:scale-95 z-[210]"
+                className="absolute right-2 sm:right-8 p-3 sm:p-4 rounded-full text-white shadow-2xl transition-all hover:scale-110 active:scale-95 z-[210] hover:brightness-110 flex items-center justify-center cursor-pointer border border-white/20"
+                style={{ backgroundColor: activeClub.bg }}
+                aria-label="Next"
               >
-                <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
+                <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={2.5} />
               </button>
             )}
           </div>
