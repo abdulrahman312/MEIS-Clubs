@@ -936,28 +936,32 @@ export default function App() {
       <div className="min-h-[100dvh] w-full flex flex-col justify-between relative overflow-y-auto animate-bg-gradient">
         <style>{globalStyles}</style>
         {/* Header */}
-        <header className="w-full px-4 sm:px-8 py-2 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
-          <img src="/images/logo/meis_logo.png" alt="meis" className="h-9 sm:h-12 md:h-14 w-auto flex-shrink-0 drop-shadow-sm object-contain" />
-          <div className="flex flex-col items-end justify-center ml-4">
-             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-xs md:text-sm whitespace-nowrap">Middle East International School - AlMuruj</span>
-             <span className="font-bold text-[#1c448d] tracking-tight text-[10px] sm:text-xs md:text-sm whitespace-nowrap" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
+        <header className="w-full px-3.5 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
+          <img 
+            src="/images/logo/meis_logo.png" 
+            alt="meis" 
+            className="h-12 xs:h-13 sm:h-12 md:h-14 w-auto flex-shrink-0 drop-shadow-sm object-contain" 
+          />
+          <div className="flex flex-col items-end justify-center ml-2.5 sm:ml-4 min-w-0">
+             <span className="font-bold text-[#1c448d] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight">Middle East International School - AlMuruj</span>
+             <span className="font-bold text-[#1c448d] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight mt-0.5" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 pt-1 sm:pt-4 pb-2 sm:pb-4 flex flex-col items-center justify-start sm:justify-center relative z-10 my-0 sm:my-auto">
-          <div className="flex flex-col items-center justify-center shrink-0 mt-1 sm:mt-0 mb-2 sm:mb-3 md:mb-4">
+        <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-2 sm:py-4 flex flex-col items-center justify-evenly sm:justify-center relative z-10 my-auto">
+          <div className="flex flex-col items-center justify-center shrink-0 mb-1 sm:mb-3 md:mb-4">
             <img 
               src="/images/logo/club_logo.png" 
               alt="Clubs" 
-              className="h-24 sm:h-20 md:h-24 lg:h-28 max-h-[16vh] sm:max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain drop-shadow-sm" 
+              className="h-20 xs:h-22 sm:h-20 md:h-24 lg:h-28 max-h-[14vh] sm:max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain drop-shadow-sm" 
             />
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold sm:font-bold tracking-wider sm:tracking-widest drop-shadow-sm animate-text-color uppercase leading-none text-center">
               MEIS CLUBS
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5 md:gap-4 w-full max-w-2xl lg:max-w-3xl shrink-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 xs:gap-3 sm:gap-3.5 md:gap-4 w-full max-w-2xl lg:max-w-3xl shrink-0 my-1 sm:my-0">
             {[
               { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6'},
               { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922' },
@@ -968,7 +972,7 @@ export default function App() {
               <button
                 key={btn.id}
                 onClick={() => handleCategorySelect(btn.label)}
-                className="font-display text-base sm:text-lg md:text-xl py-2.5 sm:py-3.5 md:py-4 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/70 backdrop-blur-sm transform transition-all duration-200 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-xs hover:shadow-md min-h-[48px] sm:min-h-[54px] md:min-h-[60px]"
+                className="font-display text-base sm:text-lg md:text-xl py-3 sm:py-3.5 md:py-4 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/70 backdrop-blur-sm transform transition-all duration-200 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-xs hover:shadow-md min-h-[50px] sm:min-h-[54px] md:min-h-[60px]"
                 style={{ borderColor: btn.color, color: btn.color }}
               >
                 {btn.label}
@@ -976,17 +980,17 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-3 sm:mt-4 md:mt-5 mb-1 w-full max-w-2xl lg:max-w-3xl flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 shrink-0">
+          <div className="mt-2 sm:mt-4 md:mt-5 mb-1 w-full max-w-2xl lg:max-w-3xl flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 shrink-0">
             <button 
               onClick={openRegistration}
-              className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3.5 bg-white hover:bg-slate-50 text-[#1c448d] border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white hover:bg-slate-50 text-[#1c448d] border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
             >
               <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-[#1c448d]" />
               <span>Registration Details</span>
             </button>
             <button 
               onClick={() => openRegistrationForm('home')}
-              className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3.5 bg-[#1c448d] hover:bg-[#14336c] text-white border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-[#1c448d] hover:bg-[#14336c] text-white border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
             >
               <ClipboardList className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               <span>Student Registration</span>
