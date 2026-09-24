@@ -827,7 +827,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       ] 
 },
 {
-  id: 5,
+  id: 8,
   title: 'Scout',
   src: '/images/girls-7-12/scout_cn.png',
   bg: '#4285F4',
@@ -863,7 +863,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   ]
 },
 {
-  id: 6,
+  id: 9,
   title: "Robotics Club",
   src: '/images/boys-4-6/robotics_cn.png',
   bg: '#319795',

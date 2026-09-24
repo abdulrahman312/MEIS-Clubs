@@ -121,7 +121,7 @@ export const GRADE_SECTIONS: GradeSectionData[] = [
         clubs: ['BIO VOYAGE', 'Escape the Room', 'Sport', 'Chemist Kitchen']
       }
     ],
-    externalClubs: ['Chess', 'Build It', 'Scout', 'AI Awareness Club (Grade 9 to 12)'],
+    externalClubs: ['Chess', 'Build It', 'Scout', 'Robotics', 'AI Awareness Club (Grade 9 to 12)'],
     externalRuleNote: 'Choose Package Falcon, OR ONE external club above.'
   }
 ];
