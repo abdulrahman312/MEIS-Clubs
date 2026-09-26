@@ -361,7 +361,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   bg: '#F4B400',
   desc: 'Fun, hands-on cooking activities where students prepare simple and healthy recipes.',
   
-  banners: ['/images/girls-7-12/COOKING.png'],
+  banners: ['/images/girls-7-12/COOKING.png', '/images/girls-7-12/cooking.jpeg'],
   details: 
   
   [ 
