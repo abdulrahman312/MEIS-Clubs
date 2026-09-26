@@ -186,7 +186,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 3, title: 'Crochet', src: '/images/girls-4-6/crochet_cn.png', bg: '#667EEA',   
       desc: 'The Crochet Club is a fun and creative space where students can learn the art of crochet, develop new skills, and express their creativity through hands-on projects.\n\nProgram 1 – Grades 4–6:\nStudents will learn the basic crochet skills, including how to hold the hook and yarn, make simple stitches, and create small, colorful projects. The program focuses on creativity, patience, and confidence in a fun and supportive environment.\n\nProgram 2 – Grades 7–9:\nStudents will build on basic crochet techniques and explore more advanced stitches, patterns, and creative designs. They will work on larger and more detailed projects while developing independence, concentration, and artistic expression.',  
-      banners: ['/images/girls-4-6/CROCHET.png', '/images/girls-4-6/CROCHET1.png'],  
+      banners: ['/images/girls-4-6/CROCHET.png'],  
       details: [  
         { title: 'Skills Gained', content: 'Bu the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
@@ -455,7 +455,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/crochet_cn.png',
   bg: '#D946A9',
   desc: 'The Crochet Club is a fun and creative space where students can learn the art of crochet, develop new skills, and express their creativity through hands-on projects.\n\nProgram 1 – Grades 4–6:\nStudents will learn the basic crochet skills, including how to hold the hook and yarn, make simple stitches, and create small, colorful projects. The program focuses on creativity, patience, and confidence in a fun and supportive environment.\n\nProgram 2 – Grades 7–9:\nStudents will build on basic crochet techniques and explore more advanced stitches, patterns, and creative designs. They will work on larger and more detailed projects while developing independence, concentration, and artistic expression.',
-  banners: ['/images/girls-7-12/CROCHET.png', '/images/girls-4-6/CROCHET1.png'],
+  banners: ['/images/girls-4-6/CROCHET1.png'],
   details: [  
         { title: 'Skills Gained', content: 'By the end of the club, students will be artistic, patient, passionate, and productive students.' },  
         { title: 'Expected Outcome', content: 'Enough products to be sold in a bazaar or in the Erax' }  
