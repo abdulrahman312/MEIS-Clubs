@@ -572,7 +572,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 {
   id: 5,
   title: 'Build It STEAM Construction Workshop by SAMACO',
-  src: '/images/boys-4-6/bildits_cn.png',
+  src: '/images/girls-7-12/buildit_cn.png',
   bg: '#E5A038',
   desc: 'Real Construction Experience.',
   banners: ['/images/boys-4-6/smaco1.jpg', '/images/boys-4-6/samaco2.jpg', '/images/boys-4-6/buildit44.jpeg', '/images/boys-4-6/buildit55.jpeg'],
