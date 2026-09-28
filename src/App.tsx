@@ -545,7 +545,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 },
 {
   id: 3,
-  title: 'Drama Club',
+  title: 'Drama Club - English',
   src: '/images/boys-4-6/drama_cn.png',
   bg: '#E26D9B',
   desc: "This program introduces boys in Grades 4–6 to the fundamentals of drama—voice, movement, character, improvisation, and performance—through progressively challenging rounds. Each round builds directly on the skills of the round before it and ends with a hands-on activity that lets students apply what they've learned in a fun, low-pressure setting. The program culminates in a Final Showcase performed for parents and the school community.",
@@ -713,7 +713,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 
 {
   id: 3,
-  title: 'Drama Club',
+  title: 'Drama Club - English',
   src: '/images/boys-7-12/drama_cn.png',
   bg: '#4D9EE0',
   desc: 'Develop the ability to express ideas, emotions, and stories using only body language, facial expressions, and gestures.',
@@ -762,20 +762,14 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 },
 {
   id: 5,
-  title: 'Arabic Drama',
-  src: '/images/boys-7-12/madar_cn.png',
-  bg: '#8C7AE6',
-  desc: 'تدريب الطلاب على إلقاء الشعر والخطابة.',
-  banners: ['images/boys-7-12/madar.jpeg'],
+  title: 'Drama Arabic (مداد)',
+  src: '/images/boys-4-6/arabicdrama_cn.png',
+  bg: '#48BB78',
+  desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
+  banners: ['/images/boys-4-6/madar.jpeg'],
   details: [
-    { 
-      title: 'Skills Gained', 
-      content: 'مهارات الشعر والخطابة.' 
-    },
-    { 
-      title: 'Expected Outcome', 
-      content: 'التعريف بشعراء العصور الأدبية.' 
-    }
+    { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
+    { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
     ,{title: 'Club Type', content: 'Internal'}
   ]
 },
@@ -901,7 +895,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     },
     {   
       id: 11, title: 'Chemist Kitchen', src: '/images/girls-4-6/chemist_cn.png', bg: '#e07d20',   
-      desc: 'Where Science Meets Flavor\n•In every session, we transform the kitchen into a real, safe laboratory for your children (Grades 4-6).\n•They won\'t just learn new recipes—they will discover the hidden chemistry and physics behind every reaction.',  
+      desc: 'Where Science Meets Flavor\n•In every session, we transform the kitchen into a real, safe laboratory for your children (Grades 7-12).\n•They won\'t just learn new recipes—they will discover the hidden chemistry and physics behind every reaction.',  
       banners: ['/images/boys-7-12/chemist1.jpg'],  
       details: [  
         { title: 'Skills Gained', content: 'Developing hand skills,Precision & Focus, Fine motor activity, Fostering Curiosity' },  
