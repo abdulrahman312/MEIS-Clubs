@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
   --font-display: 'Anton', sans-serif;
+  --font-script: 'Caveat', cursive;
   --animate-blob: blob 7s infinite;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
 }
 
 body {

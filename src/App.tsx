@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, ArrowRight, ArrowDown, X, BookOpen, ClipboardList } from 'lucide-react';
 import { RegistrationPage } from './components/RegistrationPage';
 import { StudentRegistrationForm } from './components/StudentRegistrationForm';
+import { HomeBackgroundPatterns } from './components/HomeBackgroundPatterns';
+import { GradeCardButton, GRADE_CARDS_DATA } from './components/GradeCardButton';
+import { HomeFooter } from './components/HomeFooter';
 
 const globalStyles = `
 @keyframes colorCycle {
@@ -16,36 +19,9 @@ const globalStyles = `
   50% { border-color: #73ba11; }
   75% { border-color: #19aca4; }
 }
-@keyframes bgGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.animate-text-color {
-  animation: colorCycle 8s infinite linear;
-}
-.animate-border-color {
-  animation: borderColorCycle 8s infinite linear;
-}
-.animate-bg-gradient {
-  background: linear-gradient(-45deg, #fbe7e9, #fdecdb, #eaf4dd, #dff2f1);
-  background-size: 400% 400%;
-  animation: bgGradient 15s ease infinite;
-}
 `;
 
-const Footer = () => (
-  <footer className="w-full bg-white border-t-4 sm:border-t-6 md:border-t-8 animate-border-color py-2 sm:py-2.5 md:py-3 px-4 sm:px-8 flex justify-between items-center z-50 mt-auto shrink-0">
-    <div className="flex items-center gap-2.5 sm:gap-3">
-      <img src="/images/logo/meis_logo.png" alt="meis logo" className="h-8 sm:h-10 md:h-11 w-auto object-contain" />
-      <div className="flex flex-col">
-        <span className="font-bold text-[#1c448d] text-xs sm:text-sm md:text-base">MEIS CLUBS</span>
-        <span className="text-[9px] sm:text-[11px] text-gray-400 font-medium">© 2026 All rights reserved</span>
-      </div>
-    </div>
-    <img src="/images/logo/ataa_logo.png" alt="ataa preview" className="h-8 sm:h-10 md:h-11 w-auto object-contain" />
-  </footer>
-);
+const Footer = () => <HomeFooter showWave={false} />;
 
 const isYouTubeMedia = (url?: string): boolean => {
   if (!url) return false;
@@ -166,7 +142,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
    {   
       id: 1, title: 'Chemist Kitchen', src: '/images/girls-4-6/chemist_cn.png', bg: '#34B399',   
       desc: 'Where Science Meets Flavor\n•In every session, we transform the kitchen into a real, safe laboratory for your children (Grades 4-6).\n•They won\'t just learn new recipes—they will discover the hidden chemistry and physics behind every reaction.',  
-      banners: ['/images/girls-4-6/CHEMIST KITCHEN.jpeg'],  
+      banners: ['/images/girls-4-6/CHEMIST KITCHEN.jpeg', '/images/boys-7-12/chemist.jpeg'],  
       details: [  
         { title: 'Skills Gained', content: 'Developing hand skills,Precision & Focus, Fine motor activity, Fostering Curiosity' },  
         { title: 'Expected Outcome', content: 'Building Patience, Teamwork, Inspiring Future Careers' }  
@@ -176,7 +152,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 2, title: 'Cooking', src: '/images/girls-4-6/cooking_cn.png', bg: '#D76A8D',   
       desc: 'Cook and have fun ',  
-      banners: ['/images/girls-4-6/COOKING.png'],  
+      banners: ['/images/girls-4-6/COOKING.png', '/images/girls-4-6/cooking2.png'],  
       details: [  
         { title: 'Skills Gained', bullets: ['Teamwork and collaboration', 'Communication skills', 'Time management', 'Following instructions and recipes'] },  
         { title: 'Expected Outcome', bullets: ['Students gained basic cooking and food-preparation skills.', 'Students learned to follow recipes and instructions accurately.', 'Students developed teamwork and communication skills.'] }  
@@ -278,6 +254,36 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
         { title: 'Expected Outcome', content: 'Students will create their own artwork, explore different art techniques, and build confidence in expressing their ideas creatively.' } 
          ,{title: 'Club Type', content: 'Internal'}
       ] 
+},
+{
+  id: 10,
+  title: 'Recycled ART',
+  src: '/images/girls-7-12/recycled.png',
+  bg: '#9C27B0',
+  banners: ['/images/girls-7-12/Recycled.png', '/images/girls-7-12/recycle2.jpg', '/images/girls-7-12/recycle3.jpg'],
+  desc: 'Recycled Art is a creative hands-on club where students transform everyday discarded materials into unique, eco-friendly artwork. By repurposing items like plastic, paper, and packaging, students explore artistic expression while learning the principles of sustainability and environmental responsibility.',
+  details: [
+    { 
+      title: 'Skills Gained', 
+      bullets: [
+        'Creative Problem-Solving',
+        'Teamwork and effective communication',
+        'Fine Motor Skills',
+        'Environmental Awareness',
+        
+      ] 
+    },
+    { 
+      title: 'Expected Outcome', 
+      bullets: [
+        'Eco-Friendly Artwork',
+        'Mindset Shift',
+        'Pride of Creation',
+        
+      ] 
+    },
+    {title: 'Club Type', content: 'Internal'}
+  ]
 },
 
   ],
@@ -411,7 +417,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   title: 'Recycled ART',
   src: '/images/girls-7-12/recycled.png',
   bg: '#9C27B0',
-  banners: ['/images/girls-7-12/Recycled.png', '/images/girls-7-12/recycle1.jpg', '/images/girls-7-12/recycle2.jpg', '/images/girls-7-12/recycle3.jpg'],
+  banners: ['/images/girls-7-12/Recycled.png', '/images/girls-7-12/recycle1.jpg', '/images/girls-7-12/recycle2.jpg'],
   desc: 'Recycled Art is a creative hands-on club where students transform everyday discarded materials into unique, eco-friendly artwork. By repurposing items like plastic, paper, and packaging, students explore artistic expression while learning the principles of sustainability and environmental responsibility.',
   details: [
     { 
@@ -765,7 +771,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 },
 {
   id: 5,
-  title: 'مداد Ink',
+  title: 'Arabic Drama',
   src: '/images/boys-7-12/madar_cn.png',
   bg: '#8C7AE6',
   desc: 'تدريب الطلاب على إلقاء الشعر والخطابة.',
@@ -892,6 +898,27 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     ,{title: 'Club Type', content: 'External'}
   ]
 },
+{   
+      id: 10, title: 'Sports', src: '/images/grades-1-3/sports_cn.png', bg: '#11f3ba',   
+      desc: 'The Sports Club for Grades 7-12 Boys empowers young female athletes through structured skill development, physical fitness, and dynamic team competitions.',  
+      banners: ['/images/boys-7-12/SPORTS.jpeg'],  
+      details: [  
+        { title: 'Skills Gained', content: 'Athletic agility, teamwork, strategic sportsmanship, and physical endurance.' },  
+        { title: 'Expected Outcome', content: 'Improved physical health, strong sportsmanship, enhanced teamwork abilities, and confidence in competitive play.' },
+        {title: 'Club Type', content: 'Internal'}
+      ]  
+    },
+    {   
+      id: 11, title: 'Chemist Kitchen', src: '/images/girls-4-6/chemist_cn.png', bg: '#e07d20',   
+      desc: 'Where Science Meets Flavor\n•In every session, we transform the kitchen into a real, safe laboratory for your children (Grades 4-6).\n•They won\'t just learn new recipes—they will discover the hidden chemistry and physics behind every reaction.',  
+      banners: ['/images/boys-7-12/chemist1.jpg'],  
+      details: [  
+        { title: 'Skills Gained', content: 'Developing hand skills,Precision & Focus, Fine motor activity, Fostering Curiosity' },  
+        { title: 'Expected Outcome', content: 'Building Patience, Teamwork, Inspiring Future Careers' },
+        {title: 'Club Type', content: 'Internal'} 
+          
+      ]  
+    },  
 
   ],
 };
@@ -1045,72 +1072,99 @@ export default function App() {
 
   if (currentView === 'home') {
     return (
-      <div className="min-h-[100dvh] w-full flex flex-col justify-between relative overflow-y-auto animate-bg-gradient">
-        <style>{globalStyles}</style>
+      <div className="min-h-[100dvh] w-full flex flex-col justify-between relative overflow-x-hidden bg-white font-sans">
+        {/* Background Colorful Light Patterns */}
+        <HomeBackgroundPatterns />
+
         {/* Header */}
-        <header className="w-full px-3.5 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
-          <img 
-            src="/images/logo/meis_logo.png" 
-            alt="meis" 
-            className="h-12 xs:h-13 sm:h-12 md:h-14 w-auto flex-shrink-0 drop-shadow-sm object-contain" 
-          />
+        <header className="w-full px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
+          <div className="flex items-center gap-2">
+            <img 
+              src="/images/logo/meis_logo.png" 
+              alt="MEIS Logo" 
+              className="h-12 xs:h-13 sm:h-14 md:h-16 w-auto flex-shrink-0 drop-shadow-xs object-contain" 
+            />
+          </div>
           <div className="flex flex-col items-end justify-center ml-2.5 sm:ml-4 min-w-0">
-             <span className="font-bold text-[#1c448d] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight">Middle East International School - AlMuruj</span>
-             <span className="font-bold text-[#1c448d] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight mt-0.5" dir="rtl">مدرسة الشرق الأوسط العالمية - المروج</span>
+            <span className="font-bold text-[#072e6b] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight">
+              Middle East International School - AlMuruj
+            </span>
+            <span className="font-bold text-[#072e6b] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight mt-0.5" dir="rtl">
+              مدرسة الشرق الأوسط العالمية - المروج
+            </span>
           </div>
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 py-2 sm:py-4 flex flex-col items-center justify-evenly sm:justify-center relative z-10 my-auto">
-          <div className="flex flex-col items-center justify-center shrink-0 mb-1 sm:mb-3 md:mb-4">
+        <main className="flex-1 w-full max-w-xl lg:max-w-2xl mx-auto px-3.5 sm:px-6 py-2 sm:py-3 flex flex-col items-center justify-center relative z-10 my-auto">
+          {/* Title Section */}
+          <div className="flex flex-col items-center justify-center shrink-0 mb-2 sm:mb-3 text-center">
             <img 
               src="/images/logo/club_logo.png" 
-              alt="Clubs" 
-              className="h-20 xs:h-22 sm:h-20 md:h-24 lg:h-28 max-h-[14vh] sm:max-h-[12vh] w-auto mb-1.5 sm:mb-2 object-contain drop-shadow-sm" 
+              alt="MEIS Clubs" 
+              className="h-14 xs:h-16 sm:h-18 md:h-20 w-auto mb-1 object-contain drop-shadow-xs" 
             />
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold sm:font-bold tracking-wider sm:tracking-widest drop-shadow-sm animate-text-color uppercase leading-none text-center">
-              MEIS CLUBS
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl tracking-wide uppercase leading-none drop-shadow-xs flex items-center justify-center gap-1.5 sm:gap-2">
+              <span className="text-[#072e6b]">MEIS</span>
+              <span className="flex items-center">
+                <span className="text-[#e11d48]">C</span>
+                <span className="text-[#0284c7]">L</span>
+                <span className="text-[#f59e0b]">U</span>
+                <span className="text-[#16a34a]">B</span>
+                <span className="text-[#ea580c]">S</span>
+              </span>
             </h1>
+            {/* Subtitle: Explore • Learn • Create • Belong */}
+            <p className="text-xs sm:text-sm md:text-base font-bold text-[#072e6b] tracking-wider mt-1.5 sm:mt-2 flex items-center justify-center gap-2">
+              <span>Explore</span>
+              <span className="text-[#0284c7] font-black">·</span>
+              <span>Learn</span>
+              <span className="text-[#0284c7] font-black">·</span>
+              <span>Create</span>
+              <span className="text-[#0284c7] font-black">·</span>
+              <span>Belong</span>
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 xs:gap-3 sm:gap-3.5 md:gap-4 w-full max-w-2xl lg:max-w-3xl shrink-0 my-1 sm:my-0">
-            {[
-              { id: 'grades-1-3', label: 'Grades 1 to 3', color: '#9b59b6'},
-              { id: 'girls-4-6', label: 'Girls (Grade 4 to 6)', color: '#dd0922' },
-              { id: 'girls-7-12', label: 'Girls (Grade 7 to 12)', color: '#ec881b'  },
-              { id: 'boys-4-6', label: 'Boys (Grade 4 to 6)', color: '#73ba11' },
-              { id: 'boys-7-12', label: 'Boys (Grade 7 to 12)', color: '#19aca4'  }
-            ].map((btn) => (
-              <button
-                key={btn.id}
-                onClick={() => handleCategorySelect(btn.label)}
-                className="font-display text-base sm:text-lg md:text-xl py-3 sm:py-3.5 md:py-4 px-4 rounded-2xl sm:rounded-3xl border-[3px] sm:border-4 bg-white/70 backdrop-blur-sm transform transition-all duration-200 hover:scale-[1.02] hover:bg-white active:scale-[0.98] uppercase tracking-wide flex items-center justify-center text-center shadow-xs hover:shadow-md min-h-[50px] sm:min-h-[54px] md:min-h-[60px]"
-                style={{ borderColor: btn.color, color: btn.color }}
-              >
-                {btn.label}
-              </button>
+          {/* Grade Buttons Stack */}
+          <div className="flex flex-col gap-2.5 sm:gap-3 w-full shrink-0">
+            {GRADE_CARDS_DATA.map((card) => (
+              <GradeCardButton
+                key={card.id}
+                config={card}
+                onClick={() => handleCategorySelect(card.label)}
+              />
             ))}
           </div>
 
-          <div className="mt-2 sm:mt-4 md:mt-5 mb-1 w-full max-w-2xl lg:max-w-3xl flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 shrink-0">
+          {/* Registration Buttons: Student Registration to the right of Registration Details */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full mt-3.5 sm:mt-5 shrink-0">
+            {/* 1. Registration Details (Left) */}
             <button 
               onClick={openRegistration}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-white hover:bg-slate-50 text-[#1c448d] border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
+              className="w-full py-2.5 sm:py-3.5 px-2 sm:px-4 bg-white hover:bg-blue-50/70 text-[#072e6b] border-2 border-[#072e6b] rounded-2xl font-bold text-[11px] sm:text-sm md:text-base uppercase tracking-wider shadow-xs hover:shadow-md transition-all hover:scale-[1.015] active:scale-[0.98] flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer min-h-[50px] sm:min-h-[54px] text-center"
             >
-              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-[#1c448d]" />
-              <span>Registration Details</span>
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-[#072e6b] shrink-0" />
+              <span className="leading-tight break-words">
+                Registration <span className="inline xs:block sm:inline">Details</span>
+              </span>
             </button>
+
+            {/* 2. Student Registration (Right) */}
             <button 
               onClick={() => openRegistrationForm('home')}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-[#1c448d] hover:bg-[#14336c] text-white border-2 border-[#1c448d] rounded-full font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
+              className="w-full py-2.5 sm:py-3.5 px-2 sm:px-4 bg-[#072e6b] hover:bg-[#05214e] text-white border-2 border-[#072e6b] rounded-2xl font-bold text-[11px] sm:text-sm md:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all hover:scale-[1.015] active:scale-[0.98] flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer min-h-[50px] sm:min-h-[54px] text-center"
             >
-              <ClipboardList className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              <span>Student Registration</span>
+              <ClipboardList className="w-4 h-4 sm:w-5 sm:h-5 text-white shrink-0" />
+              <span className="leading-tight break-words">
+                Student <span className="inline xs:block sm:inline">Registration</span>
+              </span>
             </button>
           </div>
         </main>
 
-        <Footer />
+        {/* Poster Reference Blue Footer */}
+        <HomeFooter showWave={true} />
       </div>
     );
   }
