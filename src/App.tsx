@@ -886,7 +886,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 {   
       id: 10, title: 'Sports', src: '/images/grades-1-3/sports_cn.png', bg: '#11f3ba',   
       desc: 'The Sports Club for Grades 7-12 Boys empowers young male athletes through structured skill development, physical fitness, and dynamic team competitions.',  
-      banners: ['/images/boys-7-12/SPORTS.jpeg'],  
+      banners: ['/images/boys-7-12/sport1.jpg'],  
       details: [  
         { title: 'Skills Gained', content: 'Athletic agility, teamwork, strategic sportsmanship, and physical endurance.' },  
         { title: 'Expected Outcome', content: 'Improved physical health, strong sportsmanship, enhanced teamwork abilities, and confidence in competitive play.' },
