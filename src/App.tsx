@@ -325,7 +325,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/art_cn.png',
   bg: '#5D9C59',
   desc: 'A fun club where students explore drawing, painting, coloring, crafts, and creative art projects.',
-  banners: ['/images/girls-7-12/ART-CLUB.png', '/images/girls-4-6/art1.jpeg'],
+  banners: ['/images/girls-7-12/art1.png'],
   
   details:
        [ 
