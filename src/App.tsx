@@ -532,7 +532,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 },
 {
   id: 2,
-  title: 'نادي مدار',
+  title: 'Drama Arabic (مداد)',
   src: '/images/boys-4-6/arabicdrama_cn.png',
   bg: '#48BB78',
   desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
