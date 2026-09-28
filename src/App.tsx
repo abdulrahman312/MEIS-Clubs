@@ -468,16 +468,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
           ,{title: 'Club Type', content: 'Internal'}
       ]  
 },
-    {   
-      id: 9, title: 'Robotics', src: '/images/girls-4-6/robotics_cn.png', bg: '#2e3ae0',   
-      desc: 'An interactive STEM & Robotics club where students explore hands-on engineering, block-based coding, and physical computing. Through building real-world models and programming autonomous systems, students learn problem-solving, critical thinking, and the fundamentals of modern technology in a fun, collaborative environment.',  
-      banners: ['/images/girls-4-6/ROBOTICS.png'],  
-      details: [  
-        { title: 'Skills Gained', bullets: ['Problem-Solving & Algorithmic Thinking', 'STEM & Mechanical Engineering Principles (Gears, Levers, & Motion)', 'Block-Based Coding & Logic Design', 'Teamwork, Collaboration, & Communication', 'Creative Thinking & Innovation'] },  
-        { title: 'Expected Outcome', bullets: ['Ability to design, build, and program functional robotic and mechanical models.', 'Strong understanding of basic programming concepts (loops, conditions, variables, and functions).', 'Enhanced logical reasoning and analytical skills to debug and troubleshoot technical challenges.', 'Completion of practical STEM projects ready for presentation and competition.'] }  
-        ,{title: 'Club Type', content: 'External'}
-      ]  
-    },  
+
     {
   id: 9,
   title: "Robotics Club",
