@@ -152,7 +152,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {   
       id: 2, title: 'Cooking', src: '/images/girls-4-6/cooking_cn.png', bg: '#D76A8D',   
       desc: 'Cook and have fun ',  
-      banners: ['/images/girls-4-6/COOKING.png', '/images/girls-4-6/cooking2.png'],  
+      banners: ['/images/girls-4-6/COOKING.png', '/images/girls-4-6/cooking2.png', '/images/girls-4-6/cooking3.jpeg'],  
       details: [  
         { title: 'Skills Gained', bullets: ['Teamwork and collaboration', 'Communication skills', 'Time management', 'Following instructions and recipes'] },  
         { title: 'Expected Outcome', bullets: ['Students gained basic cooking and food-preparation skills.', 'Students learned to follow recipes and instructions accurately.', 'Students developed teamwork and communication skills.'] }  
@@ -285,6 +285,16 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     {title: 'Club Type', content: 'Internal'}
   ]
 },
+    {   
+      id: 11, title: 'Singing Club', src: '/images/girls-4-6/signing_cn.png', bg: '#b02fe4',   
+      desc: 'The Singing Club is a fun and engaging music club for Grades 4-6. It gives students the opportunity to explore different music styles, practice vocal skills, sing international songs in English, and participate in fun activities, challenges, competitions, special events, and performances. Students will build teamwork, self-confidence, creativity, and a passion for music in a supportive and encouraging environment.',  
+      banners: ['/images/girls-4-6/singing1.jpeg'],  
+      details: [  
+        { title: 'Skills Gained', bullets: ['Singing and vocal skills', 'Exploring different music styles', 'Creativity and self-expression', 'Teamwork and collaboration', 'Communication skills', 'Self-confidence and stage confidence', 'Performance skills', 'Appreciation and passion for music'] }, 
+        { title: 'Expected Outcome', bullets: ['Explore and perform different music styles.', 'Develop and improve vocal and singing skills.', 'Learn and perform international songs in English.', 'Participate confidently in singing activities, challenges, and competitions.', 'Take part in special events and performances.', 'Build teamwork and self-confidence through group activities.', 'Discover and develop their passion for music.', 'Perform and shine confidently in front of an audience.', 'Receive a certificate of participation upon completion.'] }  ,
+        {title: 'Club Type', content: 'Internal'}
+      ]  
+    },
 
   ],
   'Girls (Grade 7 to 12)': [
@@ -886,7 +896,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
 {   
       id: 10, title: 'Sports', src: '/images/grades-1-3/sports_cn.png', bg: '#11f3ba',   
       desc: 'The Sports Club for Grades 7-12 Boys empowers young male athletes through structured skill development, physical fitness, and dynamic team competitions.',  
-      banners: ['/images/boys-7-12/sport1.jpg'],  
+      banners: ['/images/boys-7-12/sport1.jpeg'],  
       details: [  
         { title: 'Skills Gained', content: 'Athletic agility, teamwork, strategic sportsmanship, and physical endurance.' },  
         { title: 'Expected Outcome', content: 'Improved physical health, strong sportsmanship, enhanced teamwork abilities, and confidence in competitive play.' },
@@ -894,12 +904,12 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
       ]  
     },
     {   
-      id: 11, title: 'Chemist Kitchen', src: '/images/girls-4-6/chemist_cn.png', bg: '#e07d20',   
-      desc: 'Where Science Meets Flavor\n•In every session, we transform the kitchen into a real, safe laboratory for your children (Grades 7-12).\n•They won\'t just learn new recipes—they will discover the hidden chemistry and physics behind every reaction.',  
+      id: 11, title: 'Chemistry Quest', src: '/images/boys-7-12/quest_cn.png', bg: '#e07d20',   
+      desc: 'This club is a hands on inquiry program where students explore the magic or Chemistry and life Science throught existing experiments rooted in our region, connected to real life, designed for tomorrow. ',  
       banners: ['/images/boys-7-12/chemist1.jpg'],  
       details: [  
-        { title: 'Skills Gained', content: 'Developing hand skills,Precision & Focus, Fine motor activity, Fostering Curiosity' },  
-        { title: 'Expected Outcome', content: 'Building Patience, Teamwork, Inspiring Future Careers' },
+        { title: 'Skills Gained', content: 'Designing, describing, observing and making decisions ' },  
+        { title: 'Expected Outcome', content: 'Finding relation between school knowledge and student daily life' },
         {title: 'Club Type', content: 'Internal'} 
           
       ]  

@@ -17,6 +17,7 @@ import {
   FlaskConical,
   Scissors,
   Activity,
+  Mic,
   Sprout,
   HeartPulse,
   Drama as DramaIcon,
@@ -47,6 +48,7 @@ export const getClubIcon = (clubName: string) => {
   if (name.includes('cooking')) return <UtensilsCrossed className="w-5 h-5 text-amber-500" />;
   if (name.includes('chemist') || name.includes('kitchen')) return <FlaskConical className="w-5 h-5 text-teal-500" />;
   if (name.includes('crochet')) return <Scissors className="w-5 h-5 text-purple-500" />;
+  if (name.includes('sing') || name.includes('vocal') || name.includes('music')) return <Mic className="w-5 h-5 text-fuchsia-500" />;
   if (name.includes('sport') || name.includes('zumba')) return <Activity className="w-5 h-5 text-emerald-500" />;
   if (name.includes('garden')) return <Sprout className="w-5 h-5 text-lime-600" />;
   if (name.includes('bio') || name.includes('anatomy')) return <HeartPulse className="w-5 h-5 text-red-500" />;
@@ -581,7 +583,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
                     <option value="girls-4-6">🌸 Girls — Grades 4 to 6 (Lily / Daffodil)</option>
                     <option value="girls-7-12">🌸 Girls — Grades 7 to 12 (Rose / Jasmine)</option>
                     <option value="boys-1-3">⚡ Boys — Grades 1 to 3 (Ranger)</option>
-                    <option value="boys-4-6">⚡ Boys — Grades 4 to 6 (Titan / Atlas)</option>
+                    <option value="boys-4-6">⚡ Boys — Grades 4 to 6 (Titan)</option>
                     <option value="boys-7-12">⚡ Boys — Grades 7 to 12 (Falcon)</option>
                   </select>
                 </div>
@@ -772,7 +774,7 @@ export const RegistrationPage: React.FC<RegistrationPageProps> = ({
                                       className="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider text-white shrink-0"
                                       style={{ backgroundColor: section.themeColor }}
                                     >
-                                      PACKAGE {section.packages.length > 1 ? pIdx + 1 : ''}
+                                      {pkg.badgeLabel ? pkg.badgeLabel.toUpperCase() : (section.packages.length > 1 ? `PACKAGE ${pIdx + 1}` : 'PACKAGE')}
                                     </span>
                                     <h5 className="text-xl sm:text-2xl font-extrabold text-slate-900">
                                       {pkg.name}

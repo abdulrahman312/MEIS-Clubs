@@ -569,7 +569,7 @@ export const StudentRegistrationForm: React.FC<StudentRegistrationFormProps> = (
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className={`grid grid-cols-1 ${currentSectionData.packages.length > 1 ? 'sm:grid-cols-2' : ''} gap-3`}>
                       {currentSectionData.packages.map((pkg, idx) => {
                         const isSelected =
                           selectedClubType === 'package' && selectedClubChoice === pkg.name;

@@ -36,7 +36,7 @@ export const GRADE_SECTIONS: GradeSectionData[] = [
       {
         name: 'Daffodil',
         badgeLabel: 'Package 2',
-        clubs: ['Art & Craft', 'Chemist Kitchen', 'Sport', 'Crochet']
+        clubs: ['Art & Craft', 'Chemist Kitchen', 'Singing', 'Crochet']
       }
     ],
     externalClubs: ['Chess', 'Build It', 'STEM / Robotics'],
@@ -94,17 +94,12 @@ export const GRADE_SECTIONS: GradeSectionData[] = [
     packages: [
       {
         name: 'Titan',
-        badgeLabel: 'Package 1',
-        clubs: ['Sport/Scout', 'BIO VOYAGE', 'Drama - English', 'STEM – Nutty Science']
-      },
-      {
-        name: 'Atlas',
-        badgeLabel: 'Package 2',
-        clubs: ['Sport/Scout', 'BIO VOYAGE', 'Drama - Arabic', 'STEM – Nutty Science']
+        badgeLabel: 'Curated Package',
+        clubs: ['Sport/Scout', 'BIO VOYAGE', 'Drama (English/Arabic)', 'STEM – Nutty Science']
       }
     ],
     externalClubs: ['Chess', 'Robotics', 'Build It'],
-    externalRuleNote: 'Choose ONE Package (Titan or Atlas), OR ONE external club instead.'
+    externalRuleNote: 'Choose Package Titan, OR one external club instead.'
   },
   {
     id: 'boys-7-12',
