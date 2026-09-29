@@ -758,19 +758,19 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     ,{title: 'Club Type', content: 'Internal'}
   ]
 },
-{
-  id: 5,
-  title: 'Drama Arabic (مداد)',
-  src: '/images/boys-4-6/arabicdrama_cn.png',
-  bg: '#48BB78',
-  desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
-  banners: ['/images/boys-4-6/madar.jpeg'],
-  details: [
-    { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
-    { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
-    ,{title: 'Club Type', content: 'Internal'}
-  ]
-},
+// {
+//   id: 5,
+//   title: 'Drama Arabic (مداد)',
+//   src: '/images/boys-4-6/arabicdrama_cn.png',
+//   bg: '#48BB78',
+//   desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
+//   banners: ['/images/boys-4-6/madar.jpeg'],
+//   details: [
+//     { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
+//     { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
+//     ,{title: 'Club Type', content: 'Internal'}
+//   ]
+// },
 {
   id: 6,
   title: 'CHESS', 
@@ -808,7 +808,7 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
   src: '/images/girls-7-12/buildit_cn.png',
   bg: '#4285F4',
   desc: 'The Build It Club is a STEM club for Grades 7-12. It encourages students to explore Science, Technology, Engineering, and Mathematics through fun, hands-on activities. Students will design, build, experiment, and solve problems while working together on creative STEM projects.',
-  banners: ['/images/girls-7-12/BUILD-IT(2).jpeg'],
+  banners: ['/images/girls-7-12/BUILD-IT(2).jpeg', '/images/boys-7-12/firestation.png'],
   details: [ 
         { title: 'Skills Gained', bullets: ['Creativity and imagination', 'Problem-solving and critical thinking', 'Teamwork and collaboration', 'Communication skills', 'Basic engineering and design skills', 'Scientific inquiry and experimentation', 'Building and construction skills', 'Innovation and logical thinking'] }, 
         { title: 'Expected Outcome', bullets: ['Apply basic STEM concepts through practical activities.', 'Design and build simple models and projects.', 'Use problem-solving skills to overcome challenges.', 'Work cooperatively with their classmates.', 'Develop creativity, confidence, and curiosity.', 'Explain their ideas and present their completed projects.', 'Demonstrate an interest in science, technology, engineering, and mathematics.'] } 
