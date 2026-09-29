@@ -540,26 +540,14 @@ const CLUB_CATEGORIES: Record<string, Club[]> = {
     ,{title: 'Club Type', content: 'Internal'}
   ]
 },
-{
-  id: 2,
-  title: 'Drama Arabic (مداد)',
-  src: '/images/boys-4-6/arabicdrama_cn.png',
-  bg: '#48BB78',
-  desc: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.',
-  banners: ['/images/boys-4-6/madar.jpeg'],
-  details: [
-    { title: 'Skills Gained', content: 'تدريب الطلاب على الإلقاء والخطابة والتحدث بالفصحى.' },
-    { title: 'Expected Outcome', content: 'تعلم مهارات الإلقاء والتحدث بالفصحى.' }
-    ,{title: 'Club Type', content: 'Internal'}
-  ]
-},
+
 {
   id: 3,
-  title: 'Drama Club - English',
+  title: 'Drama Club',
   src: '/images/boys-4-6/drama_cn.png',
   bg: '#E26D9B',
   desc: "This program introduces boys in Grades 4–6 to the fundamentals of drama—voice, movement, character, improvisation, and performance—through progressively challenging rounds. Each round builds directly on the skills of the round before it and ends with a hands-on activity that lets students apply what they've learned in a fun, low-pressure setting. The program culminates in a Final Showcase performed for parents and the school community.",
-  banners: ['/images/boys-4-6/drama1.jpeg', '/images/boys-4-6/drama2.jpeg', '/images/boys-4-6/drama3.jpeg'],
+  banners: ['/images/boys-4-6/drama1.jpeg','/images/boys-4-6/madar.jpeg', '/images/boys-4-6/drama2.jpeg', '/images/boys-4-6/drama3.jpeg'],
   details: [
     { title: 'Skills Gained', bullets: ['Voice projection and clear speech', 'Physical and facial expression of emotion', 'Character creation and embodiment', 'Emotional range and convincing delivery', 'Script reading with expression', 'Stage-blocking vocabulary and technique'] },
     { title: 'Expected Outcome', bullets: ['Comfort and confidence within the group', 'Cooperation during unscripted group activities', 'Ability to stay in character while adapting to the unexpected', 'Successful casting and selection of the final showcase play', 'Confident full performance of the play, in costume, with props and cues, for a live audience'] }
@@ -1071,22 +1059,34 @@ export default function App() {
         {/* Background Colorful Light Patterns */}
         <HomeBackgroundPatterns />
 
-        {/* Header */}
-        <header className="w-full px-4 sm:px-8 py-2.5 sm:py-3.5 flex items-center justify-between z-10 shrink-0">
-          <div className="flex items-center gap-2">
+        {/* Header: MEIS Logo (Left) | School Name (Middle) | Ataa Logo (Right) */}
+        <header className="w-full px-3 sm:px-6 md:px-8 py-2 sm:py-3 flex items-center justify-between z-10 shrink-0 gap-2 sm:gap-4">
+          {/* Left: MEIS Logo */}
+          <div className="flex items-center shrink-0">
             <img 
               src="/images/logo/meis_logo.png" 
               alt="MEIS Logo" 
-              className="h-12 xs:h-13 sm:h-14 md:h-16 w-auto flex-shrink-0 drop-shadow-xs object-contain" 
+              className="h-11 xs:h-13 sm:h-15 md:h-16 w-auto flex-shrink-0 drop-shadow-xs object-contain" 
             />
           </div>
-          <div className="flex flex-col items-end justify-center ml-2.5 sm:ml-4 min-w-0">
-            <span className="font-bold text-[#072e6b] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight">
-              Middle East International School - AlMuruj
+
+          {/* Middle: School Name in English and Arabic */}
+          <div className="flex flex-col items-center justify-center text-center flex-1 min-w-0 px-1 sm:px-2">
+            <span className="font-extrabold text-[#072e6b] tracking-tight text-[11px] xs:text-xs sm:text-sm md:text-base leading-tight truncate max-w-full">
+              Middle East International School – AlMuruj
             </span>
-            <span className="font-bold text-[#072e6b] tracking-tight text-xs xs:text-sm sm:text-xs md:text-sm whitespace-nowrap leading-tight mt-0.5" dir="rtl">
-              مدرسة الشرق الأوسط العالمية - المروج
+            <span className="font-bold text-[#072e6b] tracking-tight text-[10px] xs:text-xs sm:text-sm md:text-base leading-tight mt-0.5 truncate max-w-full" dir="rtl">
+              مدرسة الشرق الأوسط العالمية – المروج
             </span>
+          </div>
+
+          {/* Right: Ataa Logo */}
+          <div className="flex items-center shrink-0">
+            <img 
+              src="/images/logo/ataa_logo.png" 
+              alt="Ataa Logo" 
+              className="h-11 xs:h-13 sm:h-15 md:h-16 w-auto flex-shrink-0 drop-shadow-xs object-contain" 
+            />
           </div>
         </header>
 
@@ -1097,7 +1097,7 @@ export default function App() {
             <img 
               src="/images/logo/club_logo.png" 
               alt="MEIS Clubs" 
-              className="h-14 xs:h-16 sm:h-18 md:h-20 w-auto mb-1 object-contain drop-shadow-xs" 
+              className="h-20 xs:h-24 sm:h-28 md:h-32 w-auto mb-2 sm:mb-2.5 object-contain drop-shadow-sm transition-transform hover:scale-105 duration-200" 
             />
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl tracking-wide uppercase leading-none drop-shadow-xs flex items-center justify-center gap-1.5 sm:gap-2">
               <span className="text-[#072e6b]">MEIS</span>

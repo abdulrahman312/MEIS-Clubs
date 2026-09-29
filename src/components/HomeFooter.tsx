@@ -93,11 +93,44 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ showWave = true }) => {
             </div>
           </div>
 
-          {/* Copyright & School Info */}
-          <div className="flex items-center justify-center text-center pt-2 sm:pt-3 border-t border-white/10 w-full max-w-md">
-            <p className="text-[10px] sm:text-xs text-white/80 font-medium tracking-wider uppercase">
-              MEIS CLUBS <span className="mx-1.5 opacity-60">|</span> © 2026 All rights reserved
-            </p>
+          {/* Bottom Bar: MEIS logo on left, Copyright in center, Ataa logo on right */}
+          <div className="flex items-center justify-between pt-2.5 sm:pt-3.5 border-t border-white/15 w-full gap-2 sm:gap-4">
+            {/* Bottom Left: MEIS Logo */}
+            <div className="flex items-center gap-2 shrink-0">
+              <div className="bg-white rounded-xl p-1 sm:p-1.5 shadow-sm flex items-center justify-center">
+                <img 
+                  src="/images/logo/meis_logo.png" 
+                  alt="MEIS Logo" 
+                  className="h-8 sm:h-10 md:h-11 w-auto object-contain" 
+                />
+              </div>
+              <div className="hidden xs:flex flex-col text-left">
+                <span className="font-bold text-xs sm:text-sm text-white leading-tight">MEIS</span>
+                <span className="text-[10px] text-cyan-200/80 font-medium">AlMuruj</span>
+              </div>
+            </div>
+
+            {/* Bottom Center: Copyright & School Info */}
+            <div className="flex items-center justify-center text-center px-1 sm:px-2 flex-1 min-w-0">
+              <p className="text-[10px] sm:text-xs text-white/85 font-medium tracking-wider uppercase truncate">
+                MEIS CLUBS <span className="mx-1 sm:mx-1.5 opacity-60">|</span> © 2026 All rights reserved
+              </p>
+            </div>
+
+            {/* Bottom Right: Ataa Logo */}
+            <div className="flex items-center gap-2 shrink-0">
+              <div className="hidden xs:flex flex-col text-right">
+                <span className="font-bold text-xs sm:text-sm text-white leading-tight">ATAA</span>
+                <span className="text-[10px] text-cyan-200/80 font-medium">Educational</span>
+              </div>
+              <div className="bg-white rounded-xl p-1 sm:p-1.5 shadow-sm flex items-center justify-center">
+                <img 
+                  src="/images/logo/ataa_logo.png" 
+                  alt="Ataa Logo" 
+                  className="h-8 sm:h-10 md:h-11 w-auto object-contain" 
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
